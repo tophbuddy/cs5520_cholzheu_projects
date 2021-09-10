@@ -1,2 +1,6 @@
 name: Chris Holzheu, Awesome Dev
 markdown: kramdown
+
+theme: jekyll-theme-tactile
+
+permalink: /cs5520_cholzheu_projects/:year/:month/:day/:title
