@@ -9,7 +9,7 @@ title: Chris Holzheu
 
 <ul class="posts">
 	  {% for post in site.posts %}
-	    <li><a href="/CS5520{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	    <li><a href="/cs5520_cholzheu_projects{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	  {% endfor %}
 	</ul>
 
