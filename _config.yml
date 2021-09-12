@@ -1,6 +1,4 @@
 name: Chris Holzheu, CS5520
-markdown: kramdown
+permalink: /:title
 
 theme: jekyll-theme-tactile
-
-permalink: /:title
