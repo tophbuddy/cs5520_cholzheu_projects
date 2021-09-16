@@ -46,7 +46,7 @@ Answer: Verbose, Debug, Info
 
 [1.1 GitHub Link](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/Lesson1_1_hw)
 
-![HW1_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_1_HW/Lesson1_1_HW.png?raw=true)
+![HW1_1_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_1_HW/Lesson1_1_HW.png?raw=true)
 
 # Lesson 1.2A
 ## GitHub Link [Lesson 1-2A Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/Lesson1_2/hello_toast)
@@ -58,9 +58,13 @@ Answer: Verbose, Debug, Info
 - Setting layout width and height to match the constraints set by the parent
 
 # Lesson 1.2B
-## GitHub Link [Lesson 1-2 Code HW](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/Lesson1_2/HelloConstraint)
+## GitHub Link [Lesson 1_2B Activity](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson1_2/hello_toast)
 
 ### What I Learned
+
+- Learned how to use the layout editor to preview and create new layout variants (landscape mode, tablet)
+- Used `ConstraintLayout` to align elements based on baseline constraints
+- Used `LinearLayout` to align elements based on horizontal ot vertical row and learned of its advantages
 
 ### Homework
 
@@ -86,13 +90,52 @@ Which of the following techniques is more efficient to use within this handler t
 
 Answer: Use the `view` parameter that is passed to the click handler with `setBackgroundColor()`: `view.setBackgroundColor()`
 
+Homework 1.2B App
+GitHub Link [Lesson 1-2B HW](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson1_2/HelloConstraint)
+
+![Lesson1_B_HW_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_2B_HW/Screenshot_1631764678.png?raw=true)
+
+![Lesson1_B_HW_Screenshot2](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_2B_HW/Screenshot_1631764689.png?raw=true)
+
+![Lesson1_B_HW_Screenshot3](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_2B_HW/Screenshot_1631764692.png?raw=true)
+
+![Lesson1_B_HW_Screenshot4](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_2B_HW/Screenshot_1631764697.png?raw=true)
+
 # Lesson 1.3
+## GitHub Link [Lesson 1_3 Activity](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson1_3)
+
+![Lesson1_3_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_3_Activity/Lesson1_3_Activity1.png?raw=true)
+
+![Lesson1_3_Screenshot2](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_3_Activity/Screenshot_1631767630.png?raw=true)
+
+![Lesson1_3_Screenshot3](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_3_Activity/Screenshot_1631767637.png?raw=true)
 
 ### What I learned
+
+- How to use a `ScrollView` and add layouts and views to it
+- How to format text and multiple views together into a cohesive layout
+- Using `android:autoLink="web"` to automatically crete links
 
 ### Homework
 
 Question 1 
-How many views can you use within a ScrollView?
+How many views can you use within a `ScrollView`?
 
 Answer: One View or one view group
+
+Question 2
+Which XML attribute do you use in a `LinearLayout` to show views side by side?
+
+Answer: `android:orientation="vertical"`
+
+Question 3
+Which XML attribute do you use to define the width of the LinearLayout inside the scrolling view?
+
+Answer: `android:layout_width="match_parent"`
+
+Homework 1.3 App
+GitHub Link [Lesson 1_3 HW](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson1_3_HW)
+
+![HW1_3_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_3_HW/Screenshot_1631767234.png?raw=true)
+
+![HW1_3_Screenshot2](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_3_HW/Screenshot_1631767243.png?raw=true)
