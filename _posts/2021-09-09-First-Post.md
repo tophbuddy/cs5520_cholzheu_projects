@@ -4,4 +4,4 @@ layout: posts
 
 # My First Pages Post
 
-Re-adding first GitHun pages post to test if my pages will display multiple posts
+Re-adding first GitHub pages post to test if my pages will correctly display multiple posts
