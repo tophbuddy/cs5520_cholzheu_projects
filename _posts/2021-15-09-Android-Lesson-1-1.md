@@ -53,6 +53,8 @@ GitHub Link [Lesson 1_1 HW](https://github.com/tophbuddy/cs5520_cholzheu_project
 # Lesson 1.2A
 ## GitHub Link [Lesson 1-2A Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/Lesson1_2/hello_toast)
 
+![Lesson1_2A_Activity_Screenshot2](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_2A_Activity/Screenshot_1631769945.png?raw=true)
+
 ### What I learned
 
 - View, ViewGroup, layouts, and their parent/child relationship
@@ -61,6 +63,10 @@ GitHub Link [Lesson 1_1 HW](https://github.com/tophbuddy/cs5520_cholzheu_project
 
 # Lesson 1.2B
 ## GitHub Link [Lesson 1_2B Activity](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson1_2/hello_toast)
+
+![Lesson1_2B_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_2B_Activity/Lesson1_2B_Activity1.png?raw=true)
+
+![Lesson1_2B_Activity_Screenshot2](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_2B_Activity/Screenshot_1631769119.png?raw=true)
 
 ### What I Learned
 
