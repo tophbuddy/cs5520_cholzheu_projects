@@ -9,6 +9,8 @@ date: 2021-15-09
 # Lesson 1.1
 ## GitHub Link [Lesson 1-1 Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/Assingment1/lesson1_1)
 
+![Lesson1_1_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_1_Activity/Lesson1_1_Activity.png?raw=true)
+
 ### What I learned
 
 - How to naviate Android Studio and create projects
@@ -44,7 +46,7 @@ Answer: Verbose, Debug, Info
 
 ### Lesson 1.1 HW App
 
-[1.1 GitHub Link](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/Lesson1_1_hw)
+GitHub Link [Lesson 1_1 HW](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/Lesson1_1_hw)
 
 ![HW1_1_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_1_HW/Lesson1_1_HW.png?raw=true)
 
