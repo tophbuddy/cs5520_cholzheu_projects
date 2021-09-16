@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Scrolling Text 2</string>
+    <string name="article_title">Insider Trading Allegations Rock OpenSea, NFT Marketplace
+        Responds</string>
+    <string name="article_subtitle"><b> Chastain, OpenSea’s head of product, is at the center
+        of the scandal that emerged on Twitter on Tuesday night.</b></string>
+    <string name="article_text">In a statement issued Wednesday morning, leading non-fungible token
+        (NFT) marketplace OpenSea said it uncovered evidence of insider trading by one of its
+        employees.
+        \“Yesterday we learned that one of our employees purchased items that they knew
+        were set to display on our front page before they appeared there publicly,\” the statement
+        reads.
+        \n\n
+        The statement doesn\’t have a byline, but the public relations team for Andreessen
+        Horowitz, a major investor in OpenSea, has been handling company communications around
+        the scandal, which comes less than two months after OpenSea snagged a $1.5 billion
+        valuation in a $100 million funding round.
+        \n\n
+        In a thread, the Twitter user assembled a paper
+        trail of transaction receipts tied to Nate Chastain, OpenSea\’s head of product. Chastain,
+        the Twitter account alleged, was investing in NFTs just before OpenSea featured them on
+        the front page of its website, and then cashing out on the consequent price increase.
+        \n\n
+        Chastain didn\’t immediately return a request for comment.
+        \n\n
+        Insider trading on NFTs is, of
+        course, not explicitly illegal yet, because there\’s so little legal precedent for digital
+        assets on the blockchain, but OpenSea is coming down hard anyway.
+        \n\n
+        The company says it\’s
+        implementing new policies that prohibit this kind of behavior.
+        \n\n
+        \“For a new, more open
+        internet that empowers creators and collectors, we will need to bake in trust and
+        transparency into all that we do,\” reads the statement. \“We/’re committed to doing the
+        right thing for our users and earning back the trust of the community we serve.\”
+        \n\n
+        Click this link for more crypto news www.coindesk.com/business/
+        \n\n</string>
+    <string name="add_comment">Add Comment</string>
+</resources>
