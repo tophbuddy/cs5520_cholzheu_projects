@@ -46,7 +46,7 @@ Answer: Verbose, Debug, Info
 
 [1.1 GitHub Link](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/Lesson1_1_hw)
 
-![HW1_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Screen%20Shot%202021-09-15%20at%208.19.18%20PM.png?raw=true)
+![HW1_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson1_1_HW/Lesson1_1_HW.png?raw=true)
 
 # Lesson 1.2A
 ## GitHub Link [Lesson 1-2A Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/Lesson1_2/hello_toast)
