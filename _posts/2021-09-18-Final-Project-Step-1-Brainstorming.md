@@ -57,7 +57,9 @@ layout: posts
     49. Finding a local (and reputable) baby sitter last minute
     50. Figuring out when rush hour is at it's worse in a specfic area
     
+
 ## Step 2: Exploring the Problem
+
 
 ### Problem: Managing Subscriptions (Idea \#17)
 
@@ -75,5 +77,33 @@ layout: posts
 
  
 ### Problem: Identifying Fake Products (Idea \#25)
+
+
+#### Persona and Scenario:
+
+#### Trigger:
+
+#### Desired Outcome:
+
+#### Base Knowledge:
+
+#### Required Knowledge:
+
+#### Artifacts:
+
     
 ### Problem: Donating to Charities (Idea \#18)
+
+
+#### Persona and Scenario:
+
+#### Trigger:
+
+#### Desired Outcome:
+
+#### Base Knowledge:
+
+#### Required Knowledge:
+
+#### Artifacts:
+
