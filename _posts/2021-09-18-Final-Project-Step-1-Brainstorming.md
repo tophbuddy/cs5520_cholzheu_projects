@@ -65,13 +65,23 @@ layout: posts
 
 #### Persona and Scenario:
 
+Any one today who is subscribed to a number of video streaming website, gym memberships, apps with premium features, and any other subscription based service
+
 #### Trigger:
+
+The user notices they have high monthly fees and can't decide which subscription based services they need to retain.
 
 #### Desired Outcome:
 
+The user gets a report for each subscription that shows how often they use it, how much they've spent so far, and estimated future costs. It would also give a recommendation on whether or not to retain the service.
+
 #### Base Knowledge:
 
+I expect the user knows all the services they are subscribed to.
+
 #### Required Knowledge:
+
+The user needs to know their login information for the service if it's online based or all necessary information otherwise. They need to know when they started that subscription 
 
 #### Artifacts:
 
