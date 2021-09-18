@@ -44,18 +44,23 @@ layout: posts
     36. Finding lesser known artists of a genre you like
     37. Figuring out what gift to give to a friend, significant other, family member, etc.
     38. Deciding on what or where for a first date
-    39. 
-    40.
-    41.
-    42.
-    43.
-    44.
-    45.
-    46.
-    47.
-    48.
-    49.
-    50.
+    39. Finding the best and closest (or virtual) tutor for a given subject
+    40. Recommending a drinking game if no one can agree on one
+    41. Shopping for a product only available internationally
+    42. Finding an expert on someting you need help with (locally or virutally) for one-on-one
+    43. Booking reservations at very popular restaurants
+    44. Finding and managing a buying club (a group to buy a shareable product together, ie whiskey, tea, spices, etc)
+    45. Recommending alternative investments based on one's financial situation
+    46. Finding a studying partner in a class
+    47. Managing security systems all in one place
+    48. Finding local handimen to help with home improvement projects (or teach)
+    49. Finding a local (and reputable) baby sitter last minute
+    50. Figuring out when rush hour is at it's worse in a specfic area
     
 ## Step 2: Exploring the Problem
 
+    ### Problem: Managing Subscriptions (Idea #17)
+    
+    ### Problem: Identifying Fake Products (Idea #25)
+    
+    ### Problem: Donating to Charities (Idea #18)
