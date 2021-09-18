@@ -60,6 +60,19 @@ layout: posts
 ## Step 2: Exploring the Problem
 
 ### Problem: Managing Subscriptions (Idea \#17)
+
+#### Persona and Scenario:
+
+#### Trigger:
+
+#### Desired Outcome:
+
+#### Base Knowledge:
+
+#### Required Knowledge:
+
+#### Artifacts:
+
  
 ### Problem: Identifying Fake Products (Idea \#25)
     
