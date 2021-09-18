@@ -59,8 +59,8 @@ layout: posts
     
 ## Step 2: Exploring the Problem
 
-    ### Problem: Managing Subscriptions (Idea #17)
+   ### Problem: Managing Subscriptions (Idea #17)
     
-    ### Problem: Identifying Fake Products (Idea #25)
+   ### Problem: Identifying Fake Products (Idea #25)
     
-    ### Problem: Donating to Charities (Idea #18)
+   ### Problem: Donating to Charities (Idea #18)
