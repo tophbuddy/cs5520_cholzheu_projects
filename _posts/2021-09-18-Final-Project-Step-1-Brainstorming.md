@@ -65,15 +65,15 @@ layout: posts
 
 #### Persona and Scenario:
 
-Any one today who is subscribed to a number of video streaming website, gym memberships, apps with premium features, and any other subscription based service
+Any one today who is subscribed to a number of video streaming website, gym memberships, apps with premium features, and any other subscription based service.
 
 #### Trigger:
 
-The user notices they have high monthly fees and can't decide which subscription based services they need to retain.
+The user notices multiple recurring charges on their credit/debit card account.
 
 #### Desired Outcome:
 
-The user gets a report for each subscription that shows how often they use it, how much they've spent so far, and estimated future costs. It would also give a recommendation on whether or not to retain the service.
+The user logs in to the account to cancel the subscription if they decide they dont need it and they stop seeing the recurring charge on their bank/credit card statement.
 
 #### Base Knowledge:
 
@@ -81,17 +81,30 @@ I expect the user knows all the services they are subscribed to.
 
 #### Required Knowledge:
 
-The user needs to know their login information for the service if it's online based or all necessary information otherwise. They need to know when they started that subscription 
+The user needs to know their login information for the service if it's online based or all necessary information otherwise. They need to know about their bank/credit card information so they start or stop that recurring charge and confirm that it's cancelled.
 
 #### Artifacts:
+- Tools:
+    - Mobile Phone
+    - Subscription Origin Website
+    - Bank/Credit Card Statement
+    - Bank App
+- Information:
+    - Name of Website/App/Company that is charging a subscription
+    - How much is charged and how often
+    - How often is the service used
 
- 
+
 ### Problem: Identifying Fake Products (Idea \#25)
 
 
 #### Persona and Scenario:
 
+An avid collector of a specific type of item, but not very knowledgeable. For this example I will use a sneaker collector for this example.
+
 #### Trigger:
+
+The user is looking to buy or has already
 
 #### Desired Outcome:
 
