@@ -116,11 +116,15 @@ The user should know the exact website they want to use to verify authenticity. 
 
 #### Required Knowledge:
 
+The user needs to know how to search for website/blog where they can verify their product.
+
 #### Artifacts:
+
 - Tools:
-    - 
+    - Website
 - Info
-    - 
+    - The type of item they are verifying
+    - The URL of the website they want to verify on
     
 ### Problem: Donating to Charities (Idea \#18)
 
@@ -131,13 +135,23 @@ A person with excess cash (can be any age or profession) and a desire to give.
 
 #### Trigger:
 
-The user wants to make a donation to 
+The user wants to make a donation to a local charity.
 
 #### Desired Outcome:
 
+The user finds a local charity with a specified cause they want to support and makes a donation.
+
 #### Base Knowledge:
+
+I expect the user knows how to search for local charity.
 
 #### Required Knowledge:
 
+The user needs to know their bank information that they want to donate from, how much they want to donate, 
+
 #### Artifacts:
 
+- Tools:
+    - 
+- Info
+    - 
