@@ -77,7 +77,7 @@ The user logs in to the account to cancel the subscription if they decide they d
 
 #### Base Knowledge:
 
-I expect the user knows all the services they are subscribed to.
+I expect the user knows all the services they are subscribed to. I expect the user knows how to sign up and cancel these services manually. 
 
 #### Required Knowledge:
 
