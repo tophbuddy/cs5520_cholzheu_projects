@@ -139,11 +139,11 @@ The user wants to make a donation to a local charity.
 
 #### Desired Outcome:
 
-The user finds a local charity with a specified cause they want to support and makes a donation.
+The user finds a local charity with a specified cause they want to support and makes a donation. The user also confirms that the donation has been made and that they chose a legitimate charity.
 
 #### Base Knowledge:
 
-I expect the user knows how to search for local charity.
+I expect the user knows how to search for local charity. I expect they also know how much they're able to give to the charity and 
 
 #### Required Knowledge:
 
@@ -152,6 +152,7 @@ The user needs to know their bank information that they want to donate from, how
 #### Artifacts:
 
 - Tools:
-    - 
+    - Credit Card/Debit Card/Bank Information
 - Info
-    - 
+    - The name of the charity
+    - How much to donate
