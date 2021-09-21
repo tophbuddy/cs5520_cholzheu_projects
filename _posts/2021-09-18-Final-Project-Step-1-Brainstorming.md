@@ -104,23 +104,34 @@ An avid collector of a specific type of item, but not very knowledgeable. For th
 
 #### Trigger:
 
-The user is looking to buy or has already
+The user is looking to buy or has already bought their collectable item, but is not sure if it is fake or not.
 
 #### Desired Outcome:
 
+The user goes on to a website on their computer or mobile phone to ask others or check a guide to figure out if their product is real or not.
+
 #### Base Knowledge:
+
+The user should know the exact website they want to use to verify authenticity. The user also has base knowkedge of the product they are trying to verify.
 
 #### Required Knowledge:
 
 #### Artifacts:
-
+- Tools:
+    - 
+- Info
+    - 
     
 ### Problem: Donating to Charities (Idea \#18)
 
 
 #### Persona and Scenario:
 
+A person with excess cash (can be any age or profession) and a desire to give.
+
 #### Trigger:
+
+The user wants to make a donation to 
 
 #### Desired Outcome:
 
