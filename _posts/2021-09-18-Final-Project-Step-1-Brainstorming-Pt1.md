@@ -58,4 +58,4 @@ layout: posts
     50. Figuring out when rush hour is at it's worse in a specfic area
     
 
-## Link To Step 2 of Brainstorming [Brainstorm PT2](https://tophbuddy.github.io/cs5520_cholzheu_projects/Final-Project-Step-1-Brainstorming-Pt2)
+### Link To Step 2 of Brainstorming [Brainstorm PT2](https://tophbuddy.github.io/cs5520_cholzheu_projects/Final-Project-Step-1-Brainstorming-Pt2)
