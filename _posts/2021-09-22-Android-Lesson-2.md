@@ -7,7 +7,7 @@ layout: posts
 date: 2021-23-09
 
 # Lesson 2.1
-## GitHub Link -> [Lesson 2-1 Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_1/TwoActivities)
+## GitHub Link [Lesson 2-1 Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_1/TwoActivities)
 
 ![Lesson2_1_1_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_1_Activity/2-1-1_Activity.png?raw=true)
 ![Lesson2_1_2_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_1_Activity/2-1-2_Activity.png?raw=true)
@@ -24,7 +24,7 @@ date: 2021-23-09
 - Sent data back to the main activity from the second and displayed it on the `MainActivity` TextView
 
 # Lesson 2.2
-## GitHub Link -> [Lesson 2-2 Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_2/TwoActivities2)
+## GitHub Link [Lesson 2-2 Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_2/TwoActivities2)
 
 ![Lesson2_2_1_Activity_Screenshot](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_2_Activity/Screen%20Shot%202021-09-22%20at%203.37.52%20PM.png?raw=true)
 ![Lesson2_2_2_Activity_Screenshot](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_2_Activity/Screen%20Shot%202021-09-22%20at%203.44.27%20PM.png?raw=true)
@@ -40,7 +40,7 @@ date: 2021-23-09
 
 ### Homework
 
-## GitHub Link -> [Lesson 2-2 HW Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_2_HW)
+## GitHub Link [Lesson 2-2 HW Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_2_HW)
 
 ![Lesson2_2_1_HW_Screenshot](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_2_HW/Screenshot_1632361870.png?raw=true)
 ![Lesson2_2_1_HW_Screenshot](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_2_HW/Screenshot_1632361887.png?raw=true)
@@ -67,7 +67,7 @@ Which Activity lifecycle methods are best to use for saving data before the Acti
 Answer: `onPause()` or `onStop()`
 
 # Lesson 2.3
-## GitHub Link -> [Lesson 2-3 Activity Code Steps 1-3](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_3) [Lesson 2-3 Activity Code Step 4](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_3_Pt2/ImplicitIntentsReceiver)
+## GitHub Link [Lesson 2-3 Activity Code Steps 1-3](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_3) [Lesson 2-3 Activity Code Step 4](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_3_Pt2/ImplicitIntentsReceiver)
 
 ![Lesson2_3_1_Activity_Screenshot](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_3_Activity/Screen%20Shot%202021-09-22%20at%207.58.47%20PM.png?raw=true)
 ![Lesson2_3_2_Activity_Screenshot](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_3_Activity/Screenshot_1632366311.png?raw=true)
@@ -78,4 +78,6 @@ Answer: `onPause()` or `onStop()`
 
 ### Summary
 
-- 
+- Created a new android app project to figure out how to use implicit intents
+- Added functionality that allowed a implicit intent to open a web page in a web browser, another to open a location on a map, and one to share text
+- Created a second app that receives an implicit intent for opening a webpage
