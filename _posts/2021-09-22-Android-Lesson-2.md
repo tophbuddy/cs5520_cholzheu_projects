@@ -7,16 +7,26 @@ layout: posts
 date: 2021-23-09
 
 # Lesson 2.1
-## GitHub Link [Lesson 2-1 Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_1/TwoActivities)
+## GitHub Link -> [Lesson 2-1 Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_1/TwoActivities)
 
-### What I Learned
+![Lesson2_1_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_1_Activity/2-1-1_Activity.png?raw=true)
+![Lesson2_2_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_1_Activity/2-1-2_Activity.png?raw=true)
+![Lesson2_3_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_1_Activity/2-1-3_Activity1.png?raw=true)
+![Lesson2_4_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_1_Activity/2-1-3_Activity2.png?raw=true)
+![Lesson2_5_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_1_Activity/2-1-4_Activity1.png?raw=true)
+![Lesson2_6_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_1_Activity/2-1-4_Activity2.png?raw=true)
+![Lesson2_7_Activity_Screenshot1](https://github.com/tophbuddy/cs5520_cholzheu_projects/blob/main/CS5520/Project_Images/Lesson2_1_Activity/2-1-4_Activity3.png?raw=true)
 
-- 
+### Summary
+
+- Created a new app that had a main and second activty
+- Passed a string between the activities and diplayed that string in the second activity using Intents
+- Sent data back to the main activty from the second and displayed it
 
 # Lesson 2.2
-## GitHub Link [Lesson 2-2 Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_2/TwoActivities2)
+## GitHub Link -> [Lesson 2-2 Activity Code](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_2/TwoActivities2)
 
-### What I Learned
+### Summary
 
 - 
 
@@ -43,7 +53,8 @@ Which Activity lifecycle methods are best to use for saving data before the Acti
 Answer: `onPause()` or `onStop()`
 
 # Lesson 2.3
+## GitHub Link -> [Lesson 2-3 Activity Code Steps 1-3](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_3) [Lesson 2-3 Activity Code Step 4](https://github.com/tophbuddy/cs5520_cholzheu_projects/tree/main/CS5520/NEUSEA_ChrisHolzheu_Lesson2_3_Pt2/ImplicitIntentsReceiver)
 
-### What I Learned
+### Summary
 
 - 
