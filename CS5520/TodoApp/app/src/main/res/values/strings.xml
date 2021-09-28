@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Todo: CJH</string>
+    <string name="add_todo">Add Todo</string>
+    <string name="todo_add_hint">Add a new todo</string>
+</resources>
