@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Intent intent = new Intent(MainActivity.this, TaskEditActivity.class);
-                        Log.d(LOG_TAG, "On item click");
                         String taskTitleText = (todosListView.getItemAtPosition(i).toString());
                         intent.putExtra(EXTRA_TITLE, taskTitleText);
                         startActivity(intent);
@@ -66,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 new AdapterView.OnItemLongClickListener() {
                     @Override
                     public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        Log.d(LOG_TAG, "On item long click");
                         todos.remove(i);
                         todoAdapter.notifyDataSetChanged();
                         return true;
