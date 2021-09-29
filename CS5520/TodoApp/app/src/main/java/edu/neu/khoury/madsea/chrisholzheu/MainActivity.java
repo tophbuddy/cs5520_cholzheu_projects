@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView todosListView;
     private TaskDataSource todoData;
     private final static int DATA_REQUEST = 1;
+    public static final String EXTRA_TITLE = "edu.neu.khoury.madsea.chrisholzheu.MESSAGE";
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +35,8 @@ public class MainActivity extends AppCompatActivity {
         todosListView.setAdapter(todoAdapter);
         todos.add("Buy ingredients for dinner");
         todos.add("Go to the gym");
-        todoData.put("Buy ingredients for dinner");
-        todoData.put("Got to ");
         setupListViewListener();
+        setupTaskEditListener();
     }
 
     public void addTodo(View view) {
@@ -43,12 +46,16 @@ public class MainActivity extends AppCompatActivity {
         newTodoItem.setText("");
     }
 
-    public void launchTaskEdit() {
-        Intent intent = new Intent(this, TaskEditActivity.class);
+    public void setupTaskEditListener() {
+        // Intent intent = new Intent(this, TaskEditActivity.class);
         todosListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(MainActivity.this, TaskEditActivity.class);
+                        Log.d(LOG_TAG, "On item click");
+                        String taskTitleText = (todosListView.getItemAtPosition(i).toString());
+                        intent.putExtra(EXTRA_TITLE, taskTitleText);
                         startActivity(intent);
             }
         });
@@ -59,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 new AdapterView.OnItemLongClickListener() {
                     @Override
                     public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Log.d(LOG_TAG, "On item long click");
                         todos.remove(i);
                         todoAdapter.notifyDataSetChanged();
                         return true;

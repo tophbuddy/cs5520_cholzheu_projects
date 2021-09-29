@@ -3,4 +3,5 @@
     <string name="add_todo">Add Todo</string>
     <string name="todo_add_hint">Add a new todo</string>
     <string name="task_edit_activity_name">TaskEditActivity</string>
+    <string name="editTaskInfo">Add task details and information here</string>
 </resources>
