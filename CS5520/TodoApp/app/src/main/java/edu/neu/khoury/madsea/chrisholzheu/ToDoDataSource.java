@@ -4,14 +4,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 
-public final class TaskDataSource {
-    private static TaskDataSource instance = new TaskDataSource();
+public final class ToDoDataSource {
+    private static ToDoDataSource instance = new ToDoDataSource();
     private HashMap<String, String> todoStorage = new HashMap<String, String>();
-    private TaskDataSource() {}
+    private ToDoDataSource() {}
 
-    public static TaskDataSource getInstance(String taskTitle, String taskDescription) {
+    public static ToDoDataSource getInstance(String taskTitle, String taskDescription) {
         if (instance == null) {
-            instance = new TaskDataSource();
+            instance = new ToDoDataSource();
         }
         return instance;
     }

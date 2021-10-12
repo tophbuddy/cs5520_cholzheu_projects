@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TodoApp">
         <activity
-            android:name=".TaskEditActivity"
+            android:name=".NewTodoActivity"
             android:exported="true"
             android:label="@string/task_edit_activity_name"
             android:parentActivityName=".MainActivity" />

@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> todos;
     private ArrayAdapter<String> todoAdapter;
     private ListView todosListView;
-    private TaskDataSource todoData;
+    private ToDoDataSource todoData;
     private final static int DATA_REQUEST = 1;
     public static final String EXTRA_TITLE = "edu.neu.khoury.madsea.chrisholzheu.MESSAGE";
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        Intent intent = new Intent(MainActivity.this, TaskEditActivity.class);
+                        Intent intent = new Intent(MainActivity.this, NewTodoActivity.class);
                         String taskTitleText = (todosListView.getItemAtPosition(i).toString());
                         intent.putExtra(EXTRA_TITLE, taskTitleText);
                         startActivity(intent);
