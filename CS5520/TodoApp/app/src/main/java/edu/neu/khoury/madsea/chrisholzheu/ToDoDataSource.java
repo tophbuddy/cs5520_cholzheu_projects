@@ -1,26 +1,40 @@
 package edu.neu.khoury.madsea.chrisholzheu;
 
+import android.app.Application;
+
+import androidx.lifecycle.LiveData;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
-public final class ToDoDataSource {
-    private static ToDoDataSource instance = new ToDoDataSource();
-    private HashMap<String, String> todoStorage = new HashMap<String, String>();
-    private ToDoDataSource() {}
+public final class ToDoDataSource implements IToDoDataSource{
 
-    public static ToDoDataSource getInstance(String taskTitle, String taskDescription) {
-        if (instance == null) {
-            instance = new ToDoDataSource();
-        }
-        return instance;
+    private ToDoDao toDoDao;
+
+    public ToDoDataSource(Application application) {
+        TodoRoomDatabase roomDatabase = TodoRoomDatabase.getDatabase(application);
+        toDoDao = roomDatabase.toDoDao();
     }
 
-    public void put(String todoTitle) {
-        todoStorage.put(todoTitle, "");
+    @Override
+    public void insert(ToDo todo) {
+        TodoRoomDatabase.databaseWriteExecutor.execute(() -> {
+            toDoDao.insert(todo);
+        });
     }
 
-    public String getHashMap() {
-        return String.valueOf(Collections.singletonList(Arrays.asList(todoStorage)));
+    @Override
+    public void deleteAll() { }
+
+    @Override
+    public LiveData<List<ToDo>> getAllTodos() {
+        return toDoDao.getAllToDos();
+    }
+
+    @Override
+    public LiveData<List<ToDo>> getTodosLimited(int numToDos) {
+        return toDoDao.getTodosLimited(numToDos);
     }
 }

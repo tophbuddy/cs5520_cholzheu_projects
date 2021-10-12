@@ -14,12 +14,12 @@ public interface ToDoDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(ToDo todo);
 
-    @Query("DELETE FROM ToDo")
+    @Query("DELETE FROM todo_table")
     void deleteAll();
 
-    @Query("SELECT * FROM ToDo")
-    LiveData<List<ToDo>> getAllTodos(int n);
+    @Query("SELECT * FROM todo_table")
+    LiveData<List<ToDo>> getAllToDos();
 
-    @Query("SELECT * FROM ToDo LIMIT :n")
+    @Query("SELECT * FROM todo_table LIMIT :n")
     LiveData<List<ToDo>> getTodosLimited(int n);
 }

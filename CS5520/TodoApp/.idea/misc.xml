@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.13677811550151975" />
         <entry key="app/src/main/res/layout/activity_task_edit.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/todo_view.xml" value="0.20652173913043478" />
       </map>
     </option>
   </component>
