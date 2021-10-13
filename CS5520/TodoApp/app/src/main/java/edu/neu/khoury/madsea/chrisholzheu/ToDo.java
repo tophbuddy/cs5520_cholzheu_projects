@@ -19,8 +19,16 @@ public class ToDo {
     private String todoTitle;
 
     private String todoDetails;
-    private LocalDateTime targetDate;
-    private Set todoTags;
+
+    //private Set todoTags;
+    //private LocalDateTime deadline;
+    public int getTodoId() {
+        return todoId;
+    }
+
+    public void setTodoId(int todoId) {
+        this.todoId = todoId;
+    }
 
     public String getTodoTitle() {
         return todoTitle;
@@ -38,21 +46,21 @@ public class ToDo {
         this.todoDetails = todoDetails;
     }
 
-    public LocalDateTime getTargetDate() {
-        return targetDate;
-    }
+//    public LocalDateTime getTargetDate() {
+//        return targetDate;
+//    }
+//
+//    public void setTargetDate(LocalDateTime targetDate) {
+//        this.targetDate = targetDate;
+//    }
 
-    public void setTargetDate(LocalDateTime targetDate) {
-        this.targetDate = targetDate;
-    }
-
-    public Set getTodoTags() {
-        return todoTags;
-    }
-
-    public void setTodoTags(Set todoTags) {
-        this.todoTags = todoTags;
-    }
+//    public Set getTodoTags() {
+//        return todoTags;
+//    }
+//
+//    public void setTodoTags(Set todoTags) {
+//        this.todoTags = todoTags;
+//    }
     public static ToDo createTodo(@NonNull String title, @NonNull String details) {
         ToDo todo = new ToDo();
         todo.setTodoTitle(title);

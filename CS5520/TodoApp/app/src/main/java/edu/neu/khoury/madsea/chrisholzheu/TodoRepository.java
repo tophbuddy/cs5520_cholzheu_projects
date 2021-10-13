@@ -16,7 +16,7 @@ public class TodoRepository implements Iterable<ToDo>{
 
     private TodoRepository(Application application) {
         iToDoDataSource = new ToDoDataSource(application);
-
+        this.addStartData();
     }
 
     public static TodoRepository getSingleton(Application application) {
@@ -40,6 +40,12 @@ public class TodoRepository implements Iterable<ToDo>{
 
     public void insertToDo(ToDo nToDo) {
         iToDoDataSource.insert(nToDo);
+    }
+
+    private void addStartData() {
+        insertToDo(ToDo.createTodo("Go to Grocery store", "buy eggs, flour, salt, " +
+                "and milk"));
+        insertToDo(ToDo.createTodo("Doctor Appointment","go to doctor downtown"));
     }
 
     @NonNull

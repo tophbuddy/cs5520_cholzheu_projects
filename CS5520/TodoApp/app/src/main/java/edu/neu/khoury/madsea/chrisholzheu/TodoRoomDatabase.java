@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {ToDo.class}, version = 1, exportSchema = false)
+@Database(entities = {ToDo.class}, version = 3, exportSchema = false)
 public abstract class TodoRoomDatabase extends RoomDatabase {
 
     public abstract ToDoDao toDoDao();
@@ -43,7 +43,9 @@ public abstract class TodoRoomDatabase extends RoomDatabase {
                 ToDoDao dao = INSTANCE.toDoDao();
                 dao.deleteAll();
 
-                dao.insert(ToDo.createTodo("Buy groceries","apples and oranges"));
+                dao.insert(ToDo.createTodo("Go to Grocery store", "buy eggs, flour, salt, " +
+                        "and milk"));
+                dao.insert(ToDo.createTodo("Doctor Appointment","go to doctor downtown"));
             });
         }
     };

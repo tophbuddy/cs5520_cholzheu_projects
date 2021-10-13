@@ -18,7 +18,7 @@ public class TodoViewHolder extends RecyclerView.ViewHolder {
     public void bind(ToDo toDo) {
         todoViewBinding.setTodoDetails(toDo.getTodoDetails());
         todoViewBinding.setTodoTitle(toDo.getTodoTitle());
-        todoViewBinding.setTodo(toDo);
+        todoViewBinding.setMTodo(toDo);
         todoViewBinding.executePendingBindings();
     }
 }

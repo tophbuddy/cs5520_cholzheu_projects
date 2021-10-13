@@ -26,7 +26,7 @@ public class TodoViewModel extends AndroidViewModel {
             todoDetails = new MutableLiveData<>();
             todoDetails.setValue("");
         }
-        curToDos = todoRepository.getAllTodos();
+        curToDos = todoRepository.getTodosLimited(5);
         doesTodoExist.setValue(Boolean.FALSE);
     }
 
