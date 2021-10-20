@@ -5,8 +5,14 @@
       <map>
         <entry key="app/src/main/res/layout/activity_add_todo.xml" value="0.20652173913043478" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_set_time.xml" value="0.19293478260869565" />
         <entry key="app/src/main/res/layout/activity_task_edit.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/app_main_screen.xml" value="0.19293478260869565" />
+        <entry key="app/src/main/res/layout/edit_todo.xml" value="0.1983695652173913" />
+        <entry key="app/src/main/res/layout/todo_item_view.xml" value="0.1983695652173913" />
+        <entry key="app/src/main/res/layout/todo_list.xml" value="0.1983695652173913" />
         <entry key="app/src/main/res/layout/todo_view.xml" value="0.20652173913043478" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.2953125" />
       </map>
     </option>
   </component>

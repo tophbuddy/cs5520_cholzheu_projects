@@ -6,20 +6,22 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import edu.neu.khoury.madsea.chrisholzheu.ToDoApp;
+import edu.neu.khoury.madsea.chrisholzheu.data.ToDo;
+import edu.neu.khoury.madsea.chrisholzheu.data.ToDoDao;
+import edu.neu.khoury.madsea.chrisholzheu.data.ToDoRoomDatabase;
 
 public final class ToDoDataSource implements IToDoDataSource{
 
     private ToDoDao toDoDao;
 
     public ToDoDataSource(Application application) {
-        TodoRoomDatabase roomDatabase = TodoRoomDatabase.getDatabase(application);
+        ToDoRoomDatabase roomDatabase = ToDoRoomDatabase.getDatabase(application);
         toDoDao = roomDatabase.toDoDao();
     }
 
     @Override
     public void insert(ToDo todo) {
-        TodoRoomDatabase.databaseWriteExecutor.execute(() -> {
+        ToDoRoomDatabase.databaseWriteExecutor.execute(() -> {
             toDoDao.insert(todo);
         });
     }

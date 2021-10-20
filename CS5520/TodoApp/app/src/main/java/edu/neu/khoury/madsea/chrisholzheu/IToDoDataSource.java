@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import edu.neu.khoury.madsea.chrisholzheu.data.ToDo;
+
 public interface IToDoDataSource {
 
     void insert(ToDo todo);

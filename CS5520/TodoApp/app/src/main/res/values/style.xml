@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Theme.MainActivity.MyView" parent="">
+        <item name="android:background">@color/purple_700</item>
+<!--        <item name="exam">@color/light_blue_400</item>-->
+    </style>
+</resources>
