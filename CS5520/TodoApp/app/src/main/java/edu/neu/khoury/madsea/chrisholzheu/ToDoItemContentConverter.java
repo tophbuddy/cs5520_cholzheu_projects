@@ -12,13 +12,13 @@ import java.util.stream.Collectors;
 public class ToDoItemContentConverter {
 
     @TypeConverter
-    public static String convertSet(Set<String> tags) {
-        return tags.toString();
+    public static String convertSet(Set<String> todoTags) {
+        return todoTags.toString();
     }
 
     @TypeConverter
-    public static Set<String> convertString(String tags) {
-        return Arrays.stream(tags.substring(1,tags.length()-1).split("\\s*,\\s*")).collect(Collectors.toSet());
+    public static Set<String> convertString(String todoTags) {
+        return Arrays.stream(todoTags.substring(1,todoTags.length()-1).split("\\s*,\\s*")).collect(Collectors.toSet());
     }
 
     @TypeConverter

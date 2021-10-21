@@ -16,7 +16,7 @@ import edu.neu.khoury.madsea.chrisholzheu.data.ToDo;
 import edu.neu.khoury.madsea.chrisholzheu.data.ToDoRecyclerViewAdapter;
 import edu.neu.khoury.madsea.chrisholzheu.databinding.TodoListBinding;
 
-public class ToDoListItem extends Fragment {
+public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.ExternalOnClickListener {
 
     private TodoListBinding listBinding;
     private ToDoViewModel viewModel;
@@ -67,21 +67,19 @@ public class ToDoListItem extends Fragment {
         listBinding = null;
     }
 
-    @Override
-    public void onToDoClick(ToDo toDo) {
-        viewModel.setEditFlag(toDo);
-        NavHostFragment.findNavController(AddTodoActivity.this)
-                .navigate(R.id.action_FirstFragment_to_SecondFragment);
-    }
-
-    @Override
     public void onToDoDeleteClick(ToDo toDo) {
         viewModel.deleteToDo(toDo);
     }
 
-    @Override
     public void onToDoCheckboxClick(ToDo toDo, boolean complete) {
         toDo.setComplete(complete);
         viewModel.updateToDo(toDo);
+    }
+
+    @Override
+    public void toDoItemClickListener(ToDo toDo) {
+        viewModel.setEditFlag(toDo);
+        NavHostFragment.findNavController(ToDoListItem.this)
+                .navigate(R.id.action_FirstFragment_to_SecondFragment);
     }
 }

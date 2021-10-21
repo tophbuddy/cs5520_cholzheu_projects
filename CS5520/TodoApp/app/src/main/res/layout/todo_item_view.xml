@@ -25,7 +25,7 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:text="@{todo.g()}"
+                android:text="@{todo.getTodoTitle()}"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -33,7 +33,7 @@
                 android:id="@+id/todo_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{todo.getToDoDetails.toString()}" />
+                android:text="@{todo.getTodoDetails().toString()}" />
         </LinearLayout>
 
         <Space

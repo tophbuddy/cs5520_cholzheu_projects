@@ -2,7 +2,6 @@ package edu.neu.khoury.madsea.chrisholzheu.data;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
@@ -18,7 +17,6 @@ import edu.neu.khoury.madsea.chrisholzheu.ToDoItemContentConverter;
 public class ToDo {
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    @ColumnInfo(name = "todo_id")
     private int todoId;
 
     @NonNull
@@ -35,8 +33,12 @@ public class ToDo {
     @TypeConverters(ToDoItemContentConverter.class)
     private LocalDateTime deadline;
 
+//    @NonNull
+//    @TypeConverters(ToDoItemContentConverter.class)
+//    private LocalDateTime reminderDate;
+
     @NonNull
-    private boolean remindMe;
+    private boolean reminder;
 
     @NonNull
     private boolean complete;
@@ -59,7 +61,8 @@ public class ToDo {
         setTodoTitle(toDo.getTodoTitle());
         setTodoDetails((toDo.getTodoDetails()));
         setDeadline(toDo.getDeadline());
-        setRemindMe(toDo.isRemindMe());
+        setReminder(toDo.isReminder());
+//        setReminderDate(toDo.getReminderDate());
         setComplete(toDo.isComplete());
     }
 
@@ -67,8 +70,9 @@ public class ToDo {
         todoTitle = "";
         todoDetails = "";
         deadline = LocalDateTime.now();
+//        reminderDate = LocalDateTime.now();
         todoTags = new HashSet<String>();
-        remindMe = false;
+        reminder = false;
         complete = false;
     }
 
@@ -96,13 +100,21 @@ public class ToDo {
         this.todoDetails = todoDetails;
     }
 
-    public boolean isRemindMe() {
-        return remindMe;
+    public boolean isReminder() {
+        return reminder;
     }
 
-    public void setRemindMe(boolean remindMe) {
-        this.remindMe = remindMe;
+    public void setReminder(boolean reminder) {
+        this.reminder = reminder;
     }
+
+//    public LocalDateTime getReminderDate() {
+//        return reminderDate;
+//    }
+//
+//    public void setReminderDate(LocalDateTime reminderDate) {
+//        this.reminderDate = reminderDate;
+//    }
 
     public boolean isComplete() {
         return complete;
@@ -120,11 +132,11 @@ public class ToDo {
         this.deadline = deadline;
     }
 
-    public Set getTodoTags() {
+    public Set<String> getTodoTags() {
         return todoTags;
     }
 
-    public void setTodoTags(Set todoTags) {
+    public void setTodoTags(Set<String> todoTags) {
         this.todoTags = todoTags;
     }
 
@@ -146,15 +158,13 @@ public class ToDo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ToDo toDo = (ToDo) o;
-        return todoId == toDo.todoId && remindMe == toDo.remindMe && complete == toDo.complete
+        return todoId == toDo.todoId && reminder == toDo.reminder && complete == toDo.complete
                 && todoTitle.equals(toDo.todoTitle) && todoDetails.equals(toDo.todoDetails)
                 && todoTags.equals(toDo.todoTags) && deadline.equals(toDo.deadline);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(todoId, todoTitle, todoDetails, todoTags, deadline, remindMe, complete);
+        return Objects.hash(todoId, todoTitle, todoDetails, todoTags, deadline, reminder, complete);
     }
-
-
 }

@@ -6,12 +6,16 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {ToDo.class}, version = 1, exportSchema = false)
+import edu.neu.khoury.madsea.chrisholzheu.ToDoItemContentConverter;
+
+@Database(entities = {ToDo.class}, version = 3, exportSchema = false)
+@TypeConverters({ToDoItemContentConverter.class})
 public abstract class ToDoRoomDatabase extends RoomDatabase {
 
     public abstract ToDoDao toDoDao();

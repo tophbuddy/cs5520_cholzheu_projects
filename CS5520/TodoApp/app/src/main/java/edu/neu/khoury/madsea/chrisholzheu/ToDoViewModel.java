@@ -3,7 +3,6 @@ package edu.neu.khoury.madsea.chrisholzheu;
 import android.app.Application;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -14,7 +13,7 @@ import java.util.List;
 import edu.neu.khoury.madsea.chrisholzheu.data.ToDo;
 import edu.neu.khoury.madsea.chrisholzheu.data.ToDoRepository;
 
-public class ToDoViewModel extends AndroidViewModel {
+public class ToDoViewModel extends ViewModel {
     private ToDoRepository repo;
     private final LiveData<List<ToDo>> toDoList;
     public MutableLiveData<ToDo> editToDo;
@@ -38,7 +37,7 @@ public class ToDoViewModel extends AndroidViewModel {
             newToDo.setTodoDetails(editToDo.getValue().getTodoDetails());
             newToDo.setTodoTags(editToDo.getValue().getTodoTags());
             newToDo.setDeadline(editToDo.getValue().getDeadline());
-            newToDo.setRemindMe(editToDo.getValue().isRemindMe());
+            newToDo.setReminder(editToDo.getValue().isReminder());
             newToDo.setComplete(editToDo.getValue().isComplete());
             repo.addToDo(newToDo);
         }
@@ -54,8 +53,8 @@ public class ToDoViewModel extends AndroidViewModel {
         editFlag = false;
     }
 
-    public void setEditRemindMe(boolean remindMe){
-        editToDo.getValue().setRemindMe(remindMe);
+    public void setReminder(boolean remindMe){
+        editToDo.getValue().setReminder(remindMe);
         editToDo.setValue(editToDo.getValue());
     }
 
