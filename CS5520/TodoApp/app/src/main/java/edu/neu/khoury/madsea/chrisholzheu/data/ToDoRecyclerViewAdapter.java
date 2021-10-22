@@ -35,6 +35,12 @@ public class ToDoRecyclerViewAdapter extends ListAdapter<ToDo, ToDoViewHolder> {
                 clickListener.toDoItemClickListener(new ToDo(getItem(holder.getLayoutPosition())));
             }
         });
+        holder.todoViewBinding.deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickListener.toDoItemDeleteListener(getItem(holder.getLayoutPosition()));
+            }
+        });
 //        holder.todoViewBinding.checkBoxMarked.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -45,6 +51,7 @@ public class ToDoRecyclerViewAdapter extends ListAdapter<ToDo, ToDoViewHolder> {
 
     public interface ExternalOnClickListener {
         public void toDoItemClickListener(ToDo todo);
+        public void toDoItemDeleteListener(ToDo toDo);
     }
 
 //    public static class TodoDiff extends DiffUtil.ItemCallback<ToDo> {

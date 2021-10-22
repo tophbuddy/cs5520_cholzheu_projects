@@ -43,18 +43,6 @@ public class ToDo {
     @NonNull
     private boolean complete;
 
-//    public ToDo(int todoId, @NonNull String todoTitle, @NonNull String todoDetails,
-//                @NonNull Set<String> todoTags, @NonNull LocalDateTime deadline,
-//                boolean remindMe, boolean complete) {
-//        this.todoId = todoId;
-//        this.todoTitle = todoTitle;
-//        this.todoDetails = todoDetails;
-//        this.todoTags = todoTags;
-//        this.deadline = deadline;
-//        this.remindMe = remindMe;
-//        this.complete = complete;
-//    }
-
     public ToDo(ToDo toDo) {
         setTodoId(toDo.getTodoId());
         setTodoTags(toDo.getTodoTags());

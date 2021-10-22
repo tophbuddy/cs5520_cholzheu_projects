@@ -67,7 +67,8 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
         listBinding = null;
     }
 
-    public void onToDoDeleteClick(ToDo toDo) {
+    @Override
+    public void toDoItemDeleteListener(ToDo toDo) {
         viewModel.deleteToDo(toDo);
     }
 

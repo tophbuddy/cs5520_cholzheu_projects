@@ -9,10 +9,6 @@ import androidx.databinding.BindingAdapter;
 
 public class AddToDoBinder {
 
-    public interface textListener {
-        public void updateText();
-    }
-
     @BindingAdapter("dispatchOnLoseFocus")
     public static void dispatchOnLoseFocus(EditText view, final View.OnFocusChangeListener listener) {
         view.setOnFocusChangeListener(new View.OnFocusChangeListener(){

@@ -24,6 +24,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/add_todo_screen_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:text="Add ToDo Page"
+                    android:textSize="20sp" />
+
                 <EditText
                     android:id="@+id/edit_text_todo_title"
                     android:layout_width="match_parent"
