@@ -3,6 +3,8 @@ package edu.neu.khoury.madsea.chrisholzheu;
 import android.app.Application;
 import android.util.Log;
 
+import androidx.work.WorkManager;
+
 import edu.neu.khoury.madsea.chrisholzheu.data.ToDoRepository;
 import edu.neu.khoury.madsea.chrisholzheu.data.ToDoRoomDatabase;
 
@@ -14,7 +16,6 @@ public class ToDoApp extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        Log.d("ToDoApp","Created ToDoApp.");
     }
 
     public static ToDoApp getInstance() {
@@ -28,4 +29,6 @@ public class ToDoApp extends Application {
     public ToDoRepository getRepository() {
         return ToDoRepository.getInstance(getDatabase());
     }
+
+    public WorkManager getWorkManager() { return WorkManager.getInstance(this);}
 }

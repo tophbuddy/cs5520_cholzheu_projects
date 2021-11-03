@@ -77,6 +77,17 @@
                     android:layout_weight="1"
                     android:checked="@{viewmodel.editToDo.reminder}"
                     android:text="@string/remind_me_checkbox_text" />
+
+                <EditText
+                    android:id="@+id/reminder_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/reminder_text_hint"
+                    android:text="@{viewmodel.editToDo.getReminderDate().toString()}"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:cursorVisible="false"/>
             </LinearLayout>
         </ScrollView>
 

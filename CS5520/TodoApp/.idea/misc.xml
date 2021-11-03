@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_add_todo.xml" value="0.20652173913043478" />
+        <entry key="app/src/main/res/layout/activity_add_todo.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_set_time.xml" value="0.19293478260869565" />
         <entry key="app/src/main/res/layout/activity_task_edit.xml" value="0.25" />

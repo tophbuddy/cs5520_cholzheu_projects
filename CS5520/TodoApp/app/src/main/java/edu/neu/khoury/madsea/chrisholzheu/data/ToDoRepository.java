@@ -10,11 +10,15 @@ public class ToDoRepository {
     private static ToDoRepository singleton;
     private LiveData<List<ToDo>> allToDos;
     private final ToDoRoomDatabase toDoDatabase;
+    private final LiveData<Integer> toDoId;
+    private static final int DEFAULT_ID = 1;
 
     private ToDoRepository(final ToDoRoomDatabase database) {
         toDoDatabase = database;
         toDoDao = database.toDoDao();
         allToDos = toDoDao.getAllToDos();
+        toDoId = toDoDao.getToDoId();
+        toDoId.observeForever(list -> {});
     }
 
     public static ToDoRepository getInstance(final ToDoRoomDatabase database) {
@@ -44,5 +48,12 @@ public class ToDoRepository {
         ToDoRoomDatabase.databaseWriteExecutor.execute(() -> {
             toDoDao.delete(toDo);
         });
+    }
+
+    public int getToDoId() {
+        if (toDoId.getValue() == null)
+            return DEFAULT_ID;
+        else
+            return toDoId.getValue() + DEFAULT_ID;
     }
 }

@@ -15,7 +15,8 @@ import edu.neu.khoury.madsea.chrisholzheu.ToDoItemContentConverter;
 
 @Entity(tableName = "todo_table")
 public class ToDo {
-    @PrimaryKey(autoGenerate = true)
+//    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey()
     @NonNull
     private int todoId;
 
@@ -33,9 +34,9 @@ public class ToDo {
     @TypeConverters(ToDoItemContentConverter.class)
     private LocalDateTime deadline;
 
-//    @NonNull
-//    @TypeConverters(ToDoItemContentConverter.class)
-//    private LocalDateTime reminderDate;
+    @NonNull
+    @TypeConverters(ToDoItemContentConverter.class)
+    private LocalDateTime reminderDate;
 
     @NonNull
     private boolean reminder;
@@ -50,7 +51,7 @@ public class ToDo {
         setTodoDetails((toDo.getTodoDetails()));
         setDeadline(toDo.getDeadline());
         setReminder(toDo.isReminder());
-//        setReminderDate(toDo.getReminderDate());
+        setReminderDate(toDo.getReminderDate());
         setComplete(toDo.isComplete());
     }
 
@@ -58,7 +59,7 @@ public class ToDo {
         todoTitle = "";
         todoDetails = "";
         deadline = LocalDateTime.now();
-//        reminderDate = LocalDateTime.now();
+        reminderDate = LocalDateTime.now();
         todoTags = new HashSet<String>();
         reminder = false;
         complete = false;
@@ -96,13 +97,13 @@ public class ToDo {
         this.reminder = reminder;
     }
 
-//    public LocalDateTime getReminderDate() {
-//        return reminderDate;
-//    }
-//
-//    public void setReminderDate(LocalDateTime reminderDate) {
-//        this.reminderDate = reminderDate;
-//    }
+    public LocalDateTime getReminderDate() {
+        return reminderDate;
+    }
+
+    public void setReminderDate(LocalDateTime reminderDate) {
+        this.reminderDate = reminderDate;
+    }
 
     public boolean isComplete() {
         return complete;

@@ -41,10 +41,11 @@ public class ToDoRecyclerViewAdapter extends ListAdapter<ToDo, ToDoViewHolder> {
                 clickListener.toDoItemDeleteListener(getItem(holder.getLayoutPosition()));
             }
         });
-//        holder.todoViewBinding.checkBoxMarked.setOnClickListener(new View.OnClickListener() {
+//        holder.todoViewBinding..setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                listener.onToDoCheckboxClick(getItem(holder.getLayoutPosition()), holder.todoViewBinding.doneCheckBox.isChecked());
+//                clickListener.onToDoCheckboxClick(getItem(holder.getLayoutPosition()), holder
+//                        .todoViewBinding..isChecked());
 //            }
 //        });
     }

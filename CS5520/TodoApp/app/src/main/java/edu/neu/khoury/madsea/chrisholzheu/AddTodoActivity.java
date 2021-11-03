@@ -57,19 +57,19 @@ public class AddTodoActivity extends Fragment {
                 showDeadlineSetter(view);
             }
         });
-//        addTodoBinding.reminderDate.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                showRemindMeDatePicker(view);
-//            }
-//        });
+        addTodoBinding.reminderEditText.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                showRemindMeDatePicker(view);
+            }
+        });
 
-//        addTodoBinding.remindMeCheckbox.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                remindMeClicked(view);
-//            }
-//        });
+        addTodoBinding.remindMeCheckbox.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                remindMeClicked(view);
+            }
+        });
 
         addTodoBinding.cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,20 +90,25 @@ public class AddTodoActivity extends Fragment {
         addTodoBinding.editTextTodoTitle.clearFocus();
         addTodoBinding.editTextTodoDetails.clearFocus();
         addTodoBinding.remindMeCheckbox.clearFocus();
-//        viewModel.editToDo.getValue().setRemindMe(binding.remindMeCheckbox.isChecked());
-//        addTodoBinding.reminderDate.setEnabled(binding.remindMeCheckbox.isChecked());
+        viewModel.editToDo.getValue().setReminder(addTodoBinding.remindMeCheckbox.isChecked());
+        addTodoBinding.reminderEditText.setEnabled(addTodoBinding.remindMeCheckbox.isChecked());
     }
 
     public void showDeadlineSetter(View v) {
         addTodoBinding.editTextTodoTitle.clearFocus();
         addTodoBinding.editTextTodoDetails.clearFocus();
         addTodoBinding.remindMeCheckbox.clearFocus();
-        activitySetTimeBinding = ActivitySetTimeBinding.inflate(requireActivity().getLayoutInflater());
+        activitySetTimeBinding = ActivitySetTimeBinding
+                .inflate(requireActivity()
+                        .getLayoutInflater());
         final AlertDialog alertDialog = new AlertDialog.Builder(requireActivity()).create();
 
         LocalDateTime dateTime = viewModel.editToDo.getValue().getDeadline();
 
-        activitySetTimeBinding.datePicker.updateDate(dateTime.getYear(),dateTime.getMonthValue()-1,dateTime.getDayOfMonth());
+        activitySetTimeBinding.datePicker.updateDate(dateTime
+                .getYear(),dateTime
+                .getMonthValue()-1,dateTime
+                .getDayOfMonth());
         activitySetTimeBinding.timePicker.setHour(dateTime.getHour());
         activitySetTimeBinding.timePicker.setMinute(dateTime.getMinute());
 
@@ -114,7 +119,11 @@ public class AddTodoActivity extends Fragment {
                 DatePicker datePicker = activitySetTimeBinding.datePicker;
                 TimePicker timePicker = activitySetTimeBinding.timePicker;
 
-                LocalDateTime dateTime = LocalDateTime.of(datePicker.getYear(),datePicker.getMonth()+1,datePicker.getDayOfMonth(),timePicker.getHour(),timePicker.getMinute());
+                LocalDateTime dateTime = LocalDateTime.of(datePicker.getYear(),datePicker
+                        .getMonth()+1,datePicker
+                        .getDayOfMonth(),timePicker
+                        .getHour(),timePicker
+                        .getMinute());
 
                 viewModel.editToDo.getValue().setDeadline(dateTime);
                 viewModel.editToDo.setValue(viewModel.editToDo.getValue());
@@ -136,7 +145,9 @@ public class AddTodoActivity extends Fragment {
         //final View dialogView = View.inflate(requireActivity(), R.layout.date_time_picker, null);
         final AlertDialog alertDialog = new AlertDialog.Builder(requireActivity()).create();
         LocalDateTime dateTime = viewModel.editToDo.getValue().getDeadline();
-        activitySetTimeBinding.datePicker.updateDate(dateTime.getYear(),dateTime.getMonthValue()-1,dateTime.getDayOfMonth());
+        activitySetTimeBinding.datePicker.updateDate(dateTime.getYear(),dateTime
+                .getMonthValue()-1,dateTime
+                .getDayOfMonth());
         activitySetTimeBinding.timePicker.setHour(dateTime.getHour());
         activitySetTimeBinding.timePicker.setMinute(dateTime.getMinute());
 
@@ -145,7 +156,11 @@ public class AddTodoActivity extends Fragment {
             public void onClick(View view) {
                 DatePicker datePicker = activitySetTimeBinding.datePicker;
                 TimePicker timePicker = activitySetTimeBinding.timePicker;
-                LocalDateTime dateTime = LocalDateTime.of(datePicker.getYear(),datePicker.getMonth()+1,datePicker.getDayOfMonth(),timePicker.getHour(),timePicker.getMinute());
+                LocalDateTime dateTime = LocalDateTime.of(datePicker.getYear(),datePicker
+                        .getMonth()+1,datePicker
+                        .getDayOfMonth(),timePicker
+                        .getHour(),timePicker
+                        .getMinute());
                 viewModel.editToDo.getValue().setDeadline(dateTime);
                 viewModel.editToDo.setValue(viewModel.editToDo.getValue());
                 alertDialog.dismiss();

@@ -28,6 +28,9 @@ public interface ToDoDao {
     @Query("SELECT * FROM todo_table")
     LiveData<List<ToDo>> getAllToDos();
 
+    @Query("SELECT MAX(todoId) FROM todo_table")
+    LiveData<Integer> getToDoId();
+
     @Query("SELECT * FROM todo_table LIMIT :n")
     LiveData<List<ToDo>> getTodosLimited(int n);
 }

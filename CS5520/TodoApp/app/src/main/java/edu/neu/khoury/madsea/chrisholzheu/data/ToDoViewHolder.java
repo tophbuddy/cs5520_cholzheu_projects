@@ -14,13 +14,10 @@ public class ToDoViewHolder extends RecyclerView.ViewHolder {
     public ToDoViewHolder(TodoItemViewBinding binding) {
         super(binding.getRoot());
         this.todoViewBinding = binding;
-
         binding.getRoot().setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View view) {
-
-            }
+            public void onClick(View view) {}
         });
     }
 
