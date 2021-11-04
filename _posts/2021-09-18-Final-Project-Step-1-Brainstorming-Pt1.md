@@ -4,20 +4,20 @@ layout: posts
 
 # Final Project Step 1: Brainstorm Problems
 
-## Step 1: 50 Ideas
+## Step 1: 50 Problems
 
-    1. Restaurant recommendations
-    2. Recipe recommendations
-    3. Nearest location to find specific ingredients
-    4. Food/calorie tracking
-    5. Planning meals for the week
-    6. Finding the restaurant that makes the best type of cuisine
-    7. Looking for good running routes in the city
+    1. Need a restaurant recommendation
+    2. Not sure which recipe to make
+    3. Finding nearest location to find specific ingredients
+    4. Hard to do food/calorie tracking on my own
+    5. Having trouble planning meals for the week
+    6. Hard tp find the restaurant that makes the best type of cuisine
+    7. Looking for good running routes in an unfamiliar city
     8. Finding a gym nearby that has the workout equipment you need
-    9. Recommending a movie
-    10. Finding something to do in a foreign city
-    11. Optimizing time on a short vacation
-    12. Needing a small guide of essentials for foreign travel (common phrases in language, etiquette, etc.)
+    9. Cant figure out a movie to watch
+    10. Can't find something to do in a foreign city
+    11. How to optimize time on a short vacation
+    12. Can't figure out which essentials for foreign travel (common phrases in language, etiquette, etc.)
     13. Finding the best recipe website for a given type of food
     14. Aggregating crime reports in a given neighbor or area
     15. Making shopping in a store easier by scanning and paying all on an app
