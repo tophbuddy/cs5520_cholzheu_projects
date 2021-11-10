@@ -24,8 +24,6 @@ An example of an app that utilizes a UI design that I like is Trello. Trello is 
 projects. I can already see some of the UI features being translatable to my own ToDo App and its concept does derive from managing to-dos on a more 
 professional level.
 
-[Example_Of_UI](https://cdn2.hubspot.net/hubfs/2249672/Imported_Blog_Media/android-material-screenshots.jpg)
-
 ## Feature Choice 2: ToDo Map Location
 
 
