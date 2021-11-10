@@ -4,7 +4,7 @@ layout: posts
 
 # Final Project Proposal
 
-date: 2021-11-10
+date: 2021-10-11
 
 ## Final Project Choice
 
