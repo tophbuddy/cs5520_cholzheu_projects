@@ -9,17 +9,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.neu.khoury.madsea.chrisholzheu.data.ToDo;
 import edu.neu.khoury.madsea.chrisholzheu.data.ToDoRecyclerViewAdapter;
 import edu.neu.khoury.madsea.chrisholzheu.databinding.TodoListBinding;
+import edu.neu.khoury.madsea.chrisholzheu.itemtouchhelpers.ItemTouchHelperCallback;
+import edu.neu.khoury.madsea.chrisholzheu.itemtouchhelpers.OnStartDragListener;
 
-public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.ExternalOnClickListener {
+
+public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.ExternalOnClickListener, OnStartDragListener {
 
     private TodoListBinding listBinding;
     private ToDoViewModel viewModel;
+    private ItemTouchHelper mItemTouchHelper;
     protected RecyclerView mRecyclerView;
     protected ToDoRecyclerViewAdapter mAdapter;
 
@@ -40,7 +45,10 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
         mRecyclerView = (RecyclerView) listBinding.recyclerView;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.scrollToPosition(0);
-        mAdapter = new ToDoRecyclerViewAdapter(this);
+        mAdapter = new ToDoRecyclerViewAdapter(getActivity(),this, this::onStartDrag);
+        ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(mAdapter);
+        mItemTouchHelper = new ItemTouchHelper(callback);
+        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
         viewModel.getToDoList().observe(getViewLifecycleOwner(), list -> {
             mAdapter.submitList(list);
         });
@@ -50,7 +58,6 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         listBinding.newToDoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,5 +89,10 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
         viewModel.setEditFlag(toDo);
         NavHostFragment.findNavController(ToDoListItem.this)
                 .navigate(R.id.action_FirstFragment_to_SecondFragment);
+    }
+
+    @Override
+    public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
+        mItemTouchHelper.startDrag(viewHolder);
     }
 }

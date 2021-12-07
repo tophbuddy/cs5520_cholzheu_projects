@@ -161,6 +161,7 @@ public class AddTodoActivity extends Fragment {
                         .getDayOfMonth(),timePicker
                         .getHour(),timePicker
                         .getMinute());
+                viewModel.editToDo.getValue().setReminderDate(dateTime);
                 viewModel.editToDo.getValue().setDeadline(dateTime);
                 viewModel.editToDo.setValue(viewModel.editToDo.getValue());
                 alertDialog.dismiss();

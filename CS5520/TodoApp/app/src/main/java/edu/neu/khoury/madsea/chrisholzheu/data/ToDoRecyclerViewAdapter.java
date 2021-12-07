@@ -1,5 +1,6 @@
 package edu.neu.khoury.madsea.chrisholzheu.data;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,13 +10,19 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
 import edu.neu.khoury.madsea.chrisholzheu.databinding.TodoItemViewBinding;
+import edu.neu.khoury.madsea.chrisholzheu.itemtouchhelpers.ItemTouchHelperAdapter;
+import edu.neu.khoury.madsea.chrisholzheu.itemtouchhelpers.OnStartDragListener;
 
-public class ToDoRecyclerViewAdapter extends ListAdapter<ToDo, ToDoViewHolder> {
-//    private View.OnClickListener listener;
+public class ToDoRecyclerViewAdapter extends ListAdapter<ToDo, ToDoViewHolder>
+        implements ItemTouchHelperAdapter {
     private ExternalOnClickListener clickListener;
-    public ToDoRecyclerViewAdapter(ExternalOnClickListener onClickListener) {
+    private OnStartDragListener dragListener;
+
+    public ToDoRecyclerViewAdapter(Context context, ExternalOnClickListener onClickListener,
+                                   OnStartDragListener onDragListener) {
         super(ToDo.toDoItemCallback);
         this.clickListener = onClickListener;
+        this.dragListener = onDragListener;
     }
 
     @NonNull
@@ -48,6 +55,16 @@ public class ToDoRecyclerViewAdapter extends ListAdapter<ToDo, ToDoViewHolder> {
 //                        .todoViewBinding..isChecked());
 //            }
 //        });
+    }
+
+    @Override
+    public boolean onItemMove(int startPos, int endPos) {
+        return false;
+    }
+
+    @Override
+    public void onItemDismiss(int pos) {
+
     }
 
     public interface ExternalOnClickListener {
