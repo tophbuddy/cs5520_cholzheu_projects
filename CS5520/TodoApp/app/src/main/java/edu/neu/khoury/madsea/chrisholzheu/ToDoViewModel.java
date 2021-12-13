@@ -50,6 +50,7 @@ public class ToDoViewModel extends ViewModel {
                 createNotification(repo.getToDoId());
             }
             ToDo newToDo = new ToDo();
+            Log.d(VIEW_TAG, "Adding new todo with id: " + Long.toString((repo.getToDoId())));
             newToDo.setTodoTitle(editToDo.getValue().getTodoTitle());
             newToDo.setTodoDetails(editToDo.getValue().getTodoDetails());
             newToDo.setTodoTags(editToDo.getValue().getTodoTags());
@@ -57,6 +58,7 @@ public class ToDoViewModel extends ViewModel {
             newToDo.setReminder(editToDo.getValue().isReminder());
             newToDo.setReminderDate(editToDo.getValue().getReminderDate());
             newToDo.setTodoId(repo.getToDoId());
+            newToDo.setTodoOrder(editToDo.getValue().getTodoOrder());
             newToDo.setComplete(editToDo.getValue().isComplete());
             repo.addToDo(newToDo);
         }

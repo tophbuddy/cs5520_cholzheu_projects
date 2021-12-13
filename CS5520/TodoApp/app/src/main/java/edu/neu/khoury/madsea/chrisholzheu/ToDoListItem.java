@@ -7,11 +7,15 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import edu.neu.khoury.madsea.chrisholzheu.data.ToDo;
 import edu.neu.khoury.madsea.chrisholzheu.data.ToDoRecyclerViewAdapter;
@@ -25,6 +29,7 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
     private TodoListBinding listBinding;
     private ToDoViewModel viewModel;
     private ItemTouchHelper mItemTouchHelper;
+    private ArrayList<ToDo> todoList = new ArrayList<>();
     protected RecyclerView mRecyclerView;
     protected ToDoRecyclerViewAdapter mAdapter;
 
@@ -45,14 +50,16 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
         mRecyclerView = (RecyclerView) listBinding.recyclerView;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.scrollToPosition(0);
-        mAdapter = new ToDoRecyclerViewAdapter(getActivity(),this, this::onStartDrag);
-        ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(mAdapter);
-        mItemTouchHelper = new ItemTouchHelper(callback);
-        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
+        mAdapter = new ToDoRecyclerViewAdapter(getActivity(),this, this);
+
         viewModel.getToDoList().observe(getViewLifecycleOwner(), list -> {
             mAdapter.submitList(list);
         });
         mRecyclerView.setAdapter(mAdapter);
+
+        ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(mAdapter);
+        mItemTouchHelper = new ItemTouchHelper(callback);
+        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
         return listBinding.getRoot();
     }
 
@@ -65,6 +72,15 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
                 NavHostFragment.findNavController(ToDoListItem.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
+        });
+    }
+
+    private void updateUi(LiveData<List<ToDo>> liveData) {
+        liveData.observe(getViewLifecycleOwner(), myTodos -> {
+            if (myTodos != null) {
+                mAdapter.setTodoList(myTodos);
+            }
+
         });
     }
 

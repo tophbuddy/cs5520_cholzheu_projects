@@ -10,6 +10,9 @@
         android:roundIcon="@mipmap/todo_list_a3"
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDoApp">
+
+        <meta-data />
+
         <activity
             android:name="edu.neu.khoury.madsea.chrisholzheu.MainActivity"
             android:exported="true"

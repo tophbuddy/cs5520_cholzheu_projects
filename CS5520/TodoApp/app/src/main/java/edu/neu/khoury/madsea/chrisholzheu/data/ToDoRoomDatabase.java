@@ -7,6 +7,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
+import androidx.room.AutoMigration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.ExecutorService;
@@ -14,7 +15,7 @@ import java.util.concurrent.Executors;
 
 import edu.neu.khoury.madsea.chrisholzheu.ToDoItemContentConverter;
 
-@Database(entities = {ToDo.class}, version = 3, exportSchema = false)
+@Database(entities = {ToDo.class}, version = 4, exportSchema = true)
 @TypeConverters({ToDoItemContentConverter.class})
 public abstract class ToDoRoomDatabase extends RoomDatabase {
 

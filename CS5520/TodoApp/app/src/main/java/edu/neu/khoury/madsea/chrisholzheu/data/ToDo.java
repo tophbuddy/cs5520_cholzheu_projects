@@ -2,6 +2,7 @@ package edu.neu.khoury.madsea.chrisholzheu.data;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
@@ -15,9 +16,10 @@ import edu.neu.khoury.madsea.chrisholzheu.ToDoItemContentConverter;
 
 @Entity(tableName = "todo_table")
 public class ToDo {
-//    @PrimaryKey(autoGenerate = true)
-    @PrimaryKey()
+
+    @PrimaryKey(autoGenerate = true)
     @NonNull
+    @ColumnInfo(name="todoId")
     private int todoId;
 
     @NonNull
@@ -44,6 +46,9 @@ public class ToDo {
     @NonNull
     private boolean complete;
 
+    @NonNull
+    private int todoOrder;
+
     public ToDo(ToDo toDo) {
         setTodoId(toDo.getTodoId());
         setTodoTags(toDo.getTodoTags());
@@ -53,6 +58,7 @@ public class ToDo {
         setReminder(toDo.isReminder());
         setReminderDate(toDo.getReminderDate());
         setComplete(toDo.isComplete());
+        setTodoOrder(toDo.getTodoOrder());
     }
 
     public ToDo() {
@@ -71,6 +77,14 @@ public class ToDo {
 
     public void setTodoId(int todoId) {
         this.todoId = todoId;
+    }
+
+    public int getTodoOrder() {
+        return todoOrder;
+    }
+
+    public void setTodoOrder(int todoOrder) {
+        this.todoOrder = todoOrder;
     }
 
     public String getTodoTitle() {

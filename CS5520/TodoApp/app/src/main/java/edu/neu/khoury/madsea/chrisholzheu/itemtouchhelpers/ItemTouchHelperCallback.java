@@ -6,6 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Collections;
+import java.util.List;
+
+import edu.neu.khoury.madsea.chrisholzheu.data.ToDo;
+
 public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     public static final float ALPHA = 1.0f;
@@ -47,14 +52,14 @@ public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
         if (viewHolder.getItemViewType() != target.getItemViewType()) {
             return false;
         }
-        mAdapter.onItemMove(viewHolder.getAbsoluteAdapterPosition(),
-                target.getAbsoluteAdapterPosition());
+        mAdapter.onItemMove(viewHolder.getBindingAdapterPosition(),
+                target.getBindingAdapterPosition());
         return true;
     }
 
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-        mAdapter.onItemDismiss(viewHolder.getAbsoluteAdapterPosition());
+        mAdapter.onItemDismiss(viewHolder.getBindingAdapterPosition());
     }
 
     @Override

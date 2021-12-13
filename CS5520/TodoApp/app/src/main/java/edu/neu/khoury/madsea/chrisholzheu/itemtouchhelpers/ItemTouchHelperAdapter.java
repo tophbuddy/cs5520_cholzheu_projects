@@ -1,8 +1,10 @@
 package edu.neu.khoury.madsea.chrisholzheu.itemtouchhelpers;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 public interface ItemTouchHelperAdapter {
 
-    boolean onItemMove(int startPos, int endPos);
+    boolean onItemMove(int fromPosition, int toPosition);
 
-    void onItemDismiss(int pos);
+    void onItemDismiss(int position);
 }
