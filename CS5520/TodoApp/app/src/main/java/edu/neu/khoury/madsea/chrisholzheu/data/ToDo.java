@@ -43,11 +43,21 @@ public class ToDo {
     @NonNull
     private boolean reminder;
 
+//    @NonNull
+//    private String latitude;
+//
+//    @NonNull
+//    private String longitude;
+//
+//    @NonNull
+//    private TaskAddress address;
+
     @NonNull
     private boolean complete;
 
     @NonNull
     private int todoOrder;
+
 
     public ToDo(ToDo toDo) {
         setTodoId(toDo.getTodoId());

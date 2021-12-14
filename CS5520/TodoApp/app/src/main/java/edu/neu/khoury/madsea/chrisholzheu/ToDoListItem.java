@@ -1,6 +1,7 @@
 package edu.neu.khoury.madsea.chrisholzheu;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ import edu.neu.khoury.madsea.chrisholzheu.itemtouchhelpers.OnStartDragListener;
 public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.ExternalOnClickListener, OnStartDragListener {
 
     private TodoListBinding listBinding;
+    private static final String RECYCLER_TAG = "ToDoRecyclerListItem";
     private ToDoViewModel viewModel;
     private ItemTouchHelper mItemTouchHelper;
     private ArrayList<ToDo> todoList = new ArrayList<>();
@@ -52,11 +54,18 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
         mRecyclerView.scrollToPosition(0);
         mAdapter = new ToDoRecyclerViewAdapter(getActivity(),this, this);
 
-        viewModel.getToDoList().observe(getViewLifecycleOwner(), list -> {
+        viewModel.getToDoList().observe(getViewLifecycleOwner(),
+                list -> {
             mAdapter.submitList(list);
         });
-        mRecyclerView.setAdapter(mAdapter);
 
+        mRecyclerView.setAdapter(mAdapter);
+        mAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+            @Override
+            public void onChanged() {
+                Log.e(RECYCLER_TAG, "item position changed");
+            }
+        });
         ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(mAdapter);
         mItemTouchHelper = new ItemTouchHelper(callback);
         mItemTouchHelper.attachToRecyclerView(mRecyclerView);
@@ -75,14 +84,14 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
         });
     }
 
-    private void updateUi(LiveData<List<ToDo>> liveData) {
-        liveData.observe(getViewLifecycleOwner(), myTodos -> {
-            if (myTodos != null) {
-                mAdapter.setTodoList(myTodos);
-            }
-
-        });
-    }
+//    private void updateUi(LiveData<List<ToDo>> liveData) {
+//        liveData.observe(getViewLifecycleOwner(), myTodos -> {
+//            if (myTodos != null) {
+//                mAdapter.setTodoList(myTodos);
+//            }
+//
+//        });
+//    }
 
     @Override
     public void onDestroyView() {

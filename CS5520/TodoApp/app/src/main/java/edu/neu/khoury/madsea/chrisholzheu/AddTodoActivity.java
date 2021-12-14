@@ -3,13 +3,11 @@ package edu.neu.khoury.madsea.chrisholzheu;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +17,14 @@ import android.widget.TimePicker;
 import java.time.LocalDateTime;
 
 import edu.neu.khoury.madsea.chrisholzheu.databinding.ActivityAddTodoBinding;
+import edu.neu.khoury.madsea.chrisholzheu.databinding.ActivityChooseLocationBinding;
 import edu.neu.khoury.madsea.chrisholzheu.databinding.ActivitySetTimeBinding;
 
 public class AddTodoActivity extends Fragment {
 
     private ActivityAddTodoBinding addTodoBinding;
     private ActivitySetTimeBinding activitySetTimeBinding;
+//    private ActivityChooseLocationBinding chooseLocationBinding;
     private ToDoViewModel viewModel;
 
     @Override
@@ -175,4 +175,8 @@ public class AddTodoActivity extends Fragment {
         alertDialog.setView(activitySetTimeBinding.getRoot());
         alertDialog.show();
     }
+
+//    public void showLocationPicker(View v) {
+//
+//    }
 }

@@ -6,10 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Collections;
-import java.util.List;
-
-import edu.neu.khoury.madsea.chrisholzheu.data.ToDo;
 
 public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
