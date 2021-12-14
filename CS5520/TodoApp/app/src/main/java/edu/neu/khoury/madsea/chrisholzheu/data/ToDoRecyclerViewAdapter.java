@@ -74,10 +74,6 @@ public class ToDoRecyclerViewAdapter extends ListAdapter<ToDo, ToDoViewHolder>
 //        }
 //    }
 
-//    public ToDo getTodoAtPosition(int position) {
-//        return todoList.get(position);
-//    }
-
     @NonNull
     @Override
     public ToDoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -107,11 +103,10 @@ public class ToDoRecyclerViewAdapter extends ListAdapter<ToDo, ToDoViewHolder>
     public boolean onItemMove(int fromPosition, int toPosition) {
         Log.d(RECYCLER_TAG, "From Position: " + fromPosition);
         Log.d(RECYCLER_TAG, "To Position: " + toPosition);
-        notifyItemMoved(fromPosition, toPosition);
-//        List<ToDo> currentList = getCurrentList();
-//        List<ToDo> newList = new ArrayList<>(currentList);
-//        Collections.swap(newList, fromPosition, toPosition);
-//        submitList(newList);
+        List<ToDo> currentList = getCurrentList();
+        List<ToDo> newList = new ArrayList<>(currentList);
+        Collections.swap(newList, fromPosition, toPosition);
+        submitList(newList);
 //        if (fromPosition < toPosition) {
 //            for (int i = fromPosition; i < toPosition; i++) {
 //                Collections.swap(todoList, i, i + 1);
@@ -122,6 +117,8 @@ public class ToDoRecyclerViewAdapter extends ListAdapter<ToDo, ToDoViewHolder>
 //            }
 //        }
 //        notifyItemMoved(fromPosition, toPosition);
+        this.notifyItemChanged(fromPosition);
+        this.notifyItemChanged(toPosition);
 
         return true;
     }

@@ -2,33 +2,33 @@
   "formatVersion": 1,
   "database": {
     "version": 4,
-    "identityHash": "f62fcf064d9401cea205b52bf300f6f8",
+    "identityHash": "a78d87d21e6cdd6421535db628e1ab63",
     "entities": [
       {
         "tableName": "todo_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`todoId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `todoTitle` TEXT NOT NULL, `todoDetails` TEXT NOT NULL, `todoTags` TEXT NOT NULL, `deadline` INTEGER NOT NULL, `reminderDate` INTEGER NOT NULL, `reminder` INTEGER NOT NULL, `complete` INTEGER NOT NULL, `todoOrder` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`todo_id` INTEGER NOT NULL, `title` TEXT NOT NULL, `details` TEXT NOT NULL, `tags` TEXT NOT NULL, `deadline` INTEGER NOT NULL, `reminder_date` INTEGER NOT NULL, `reminder` INTEGER NOT NULL, `latitude` TEXT NOT NULL, `longitude` TEXT NOT NULL, `complete` INTEGER NOT NULL, `position_order` INTEGER NOT NULL, PRIMARY KEY(`todo_id`))",
         "fields": [
           {
             "fieldPath": "todoId",
-            "columnName": "todoId",
+            "columnName": "todo_id",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
             "fieldPath": "todoTitle",
-            "columnName": "todoTitle",
+            "columnName": "title",
             "affinity": "TEXT",
             "notNull": true
           },
           {
             "fieldPath": "todoDetails",
-            "columnName": "todoDetails",
+            "columnName": "details",
             "affinity": "TEXT",
             "notNull": true
           },
           {
             "fieldPath": "todoTags",
-            "columnName": "todoTags",
+            "columnName": "tags",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -40,7 +40,7 @@
           },
           {
             "fieldPath": "reminderDate",
-            "columnName": "reminderDate",
+            "columnName": "reminder_date",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -51,6 +51,18 @@
             "notNull": true
           },
           {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
             "fieldPath": "complete",
             "columnName": "complete",
             "affinity": "INTEGER",
@@ -58,16 +70,16 @@
           },
           {
             "fieldPath": "todoOrder",
-            "columnName": "todoOrder",
+            "columnName": "position_order",
             "affinity": "INTEGER",
             "notNull": true
           }
         ],
         "primaryKey": {
           "columnNames": [
-            "todoId"
+            "todo_id"
           ],
-          "autoGenerate": true
+          "autoGenerate": false
         },
         "indices": [],
         "foreignKeys": []
@@ -76,7 +88,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f62fcf064d9401cea205b52bf300f6f8')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a78d87d21e6cdd6421535db628e1ab63')"
     ]
   }
 }

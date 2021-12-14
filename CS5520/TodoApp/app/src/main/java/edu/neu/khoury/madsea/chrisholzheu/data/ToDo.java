@@ -17,45 +17,54 @@ import edu.neu.khoury.madsea.chrisholzheu.ToDoItemContentConverter;
 @Entity(tableName = "todo_table")
 public class ToDo {
 
-    @PrimaryKey(autoGenerate = true)
+//    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @NonNull
-    @ColumnInfo(name="todoId")
+    @ColumnInfo(name="todo_id")
     private int todoId;
 
     @NonNull
+    @ColumnInfo(name="title")
     private String todoTitle;
 
     @NonNull
+    @ColumnInfo(name="details")
     private String todoDetails;
 
     @NonNull
+    @ColumnInfo(name="tags")
     @TypeConverters(ToDoItemContentConverter.class)
     private Set<String> todoTags;
 
     @NonNull
+    @ColumnInfo(name="deadline")
     @TypeConverters(ToDoItemContentConverter.class)
     private LocalDateTime deadline;
 
     @NonNull
+    @ColumnInfo(name="reminder_date")
     @TypeConverters(ToDoItemContentConverter.class)
     private LocalDateTime reminderDate;
 
     @NonNull
     private boolean reminder;
 
-//    @NonNull
-//    private String latitude;
-//
-//    @NonNull
-//    private String longitude;
-//
-//    @NonNull
+    @NonNull
+    @ColumnInfo(name="latitude")
+    private String latitude;
+
+    @NonNull
+    @ColumnInfo(name="longitude")
+    private String longitude;
+
+//    @ColumnInfo(name = "address")
 //    private TaskAddress address;
 
     @NonNull
     private boolean complete;
 
     @NonNull
+    @ColumnInfo(name="position_order")
     private int todoOrder;
 
 
@@ -69,6 +78,9 @@ public class ToDo {
         setReminderDate(toDo.getReminderDate());
         setComplete(toDo.isComplete());
         setTodoOrder(toDo.getTodoOrder());
+        setLatitude(toDo.getLatitude());
+        setLongitude(toDo.getLongitude());
+//        setAddress(toDo.getAddress());
     }
 
     public ToDo() {
@@ -79,6 +91,9 @@ public class ToDo {
         todoTags = new HashSet<String>();
         reminder = false;
         complete = false;
+        todoOrder = 0;
+        latitude = "1";
+        longitude = "1";
     }
 
     public int getTodoId() {
@@ -153,6 +168,40 @@ public class ToDo {
         this.todoTags = todoTags;
     }
 
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude( String latitude) {
+        this.latitude = latitude;
+    }
+
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude( String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String createLatLong () {
+        String mLatitude = this.latitude;
+        String mLongitude = this.longitude;
+        String latLang = mLatitude + " " + mLongitude;
+        return latLang;
+    }
+
+//    @NonNull
+//    public TaskAddress getAddress() {
+//        return address;
+//    }
+//
+//    public void setAddress(@NonNull TaskAddress address) {
+//        this.address = address;
+//    }
+
     public static DiffUtil.ItemCallback<ToDo> toDoItemCallback =
             new DiffUtil.ItemCallback<ToDo>() {
                 @Override
@@ -171,13 +220,16 @@ public class ToDo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ToDo toDo = (ToDo) o;
-        return todoId == toDo.todoId && reminder == toDo.reminder && complete == toDo.complete
-                && todoTitle.equals(toDo.todoTitle) && todoDetails.equals(toDo.todoDetails)
-                && todoTags.equals(toDo.todoTags) && deadline.equals(toDo.deadline);
+        return todoId == toDo.todoId && reminder == toDo.reminder && complete == toDo.complete &&
+                todoOrder == toDo.todoOrder && todoTitle.equals(toDo.todoTitle) &&
+                todoDetails.equals(toDo.todoDetails) && todoTags.equals(toDo.todoTags) &&
+                deadline.equals(toDo.deadline) && reminderDate.equals(toDo.reminderDate) &&
+                latitude.equals(toDo.latitude) && longitude.equals(toDo.longitude);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(todoId, todoTitle, todoDetails, todoTags, deadline, reminder, complete);
+        return Objects.hash(todoId, todoTitle, todoDetails, todoTags, deadline, reminderDate,
+                reminder, latitude, longitude, complete, todoOrder);
     }
 }

@@ -9,6 +9,8 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.google.android.gms.tasks.Task;
+
 import java.util.List;
 
 @Dao
@@ -32,15 +34,20 @@ public interface ToDoDao {
     @Query("SELECT * FROM todo_table")
     LiveData<List<ToDo>> getAllToDos();
 
-    @Query("SELECT MAX(todoId) FROM todo_table")
+    @Query("SELECT MAX(todo_id) FROM todo_table")
     LiveData<Integer> getToDoId();
 
+    @Query("UPDATE todo_table SET position_order = " +
+            "( SELECT SUM(position_order) FROM todo_table WHERE todo_id IN (:oldPos, :newPos)) - " +
+            "position_order WHERE todo_id IN (:oldPos, :newPos)")
+    int swapPositions(int oldPos, int newPos);
+
     // UPDATE todo_table set todoOrder = 2 when id = 3
-    @Query("SELECT * FROM todo_table ORDER BY todoOrder ASC")
+    @Query("SELECT * FROM todo_table ORDER BY position_order ASC")
     LiveData<List<ToDo>> sortByOrder();
 
-//    @Query("SELECT MAX(todo_order) FROM todo_table")
-//    LiveData<Integer> getLargestOrder();
+    @Query("SELECT MAX(position_order) FROM todo_table")
+    LiveData<Integer> getLargestOrder();
 
     @Query("SELECT * FROM todo_table LIMIT :n")
     LiveData<List<ToDo>> getTodosLimited(int n);

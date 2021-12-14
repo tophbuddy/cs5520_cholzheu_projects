@@ -89,12 +89,17 @@
                     android:focusable="false"
                     android:cursorVisible="false"/>
 
-<!--                <EditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:ems="10"-->
-<!--                    android:hint="@string/todo_location_hint"-->
-<!--                    android:text="@{viewmodel.editToDo.}"-->
+                <EditText
+                    android:id="@+id/location_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/todo_location_hint"
+                    android:text="test"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:cursorVisible="false"/>
+
             </LinearLayout>
         </ScrollView>
 

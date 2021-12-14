@@ -51,6 +51,18 @@ public class ToDoRepository {
         });
     }
 
+    public void updateListOrder() {
+        ToDoRoomDatabase.databaseWriteExecutor.execute(() -> {
+            toDoDao.sortByOrder();
+        });
+    }
+
+    public void swapItems(int oldPos, int newPos) {
+        ToDoRoomDatabase.databaseWriteExecutor.execute(() -> {
+            toDoDao.swapPositions(oldPos, newPos);
+        });
+    }
+
     public int getToDoId() {
         if (toDoId.getValue() == null)
             return DEFAULT_ID;

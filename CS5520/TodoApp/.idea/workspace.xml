@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
@@ -17,18 +17,20 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/edu.neu.khoury.madsea.chrisholzheu.data.ToDoRoomDatabase/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/edu.neu.khoury.madsea.chrisholzheu.data.ToDoRoomDatabase/4.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/AddTodoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/AddTodoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/ToDoItemContentConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/ToDoItemContentConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/LocationPickerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/LocationPickerActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/ToDoListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/ToDoListItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/ToDoViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/ToDoViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/AddToDoBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/AddToDoBinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/TaskAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/TaskAddress.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDoRecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDoRecyclerViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/itemtouchhelpers/ItemTouchHelperCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/itemtouchhelpers/ItemTouchHelperCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_todo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_todo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_choose_location.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_choose_location.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +92,9 @@
   </component>
   <component name="RecentsManager">
     <key name="android.template.-459468341">
+      <recent name="edu.neu.khoury.madsea.chrisholzheu" />
+    </key>
+    <key name="android.template.1427422587">
       <recent name="edu.neu.khoury.madsea.chrisholzheu" />
     </key>
   </component>
@@ -181,17 +186,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDoRecyclerViewAdapter.java</url>
-          <line>112</line>
+          <line>107</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDoRecyclerViewAdapter.java</url>
-          <line>110</line>
+          <line>105</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/edu/neu/khoury/madsea/chrisholzheu/data/ToDoRecyclerViewAdapter.java</url>
-          <line>113</line>
+          <line>108</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

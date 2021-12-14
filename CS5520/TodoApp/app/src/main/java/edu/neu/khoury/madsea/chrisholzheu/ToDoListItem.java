@@ -54,10 +54,10 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
         mRecyclerView.scrollToPosition(0);
         mAdapter = new ToDoRecyclerViewAdapter(getActivity(),this, this);
 
-        viewModel.getToDoList().observe(getViewLifecycleOwner(),
-                list -> {
-            mAdapter.submitList(list);
-        });
+//        viewModel.getToDoList().observe(getViewLifecycleOwner(),
+//                list -> {
+//            mAdapter.submitList(list);
+//        });
 
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
@@ -66,6 +66,10 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
                 Log.e(RECYCLER_TAG, "item position changed");
             }
         });
+        viewModel.getToDoList().observe(getViewLifecycleOwner(),
+                list -> {
+                    mAdapter.submitList(list);
+                });
         ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(mAdapter);
         mItemTouchHelper = new ItemTouchHelper(callback);
         mItemTouchHelper.attachToRecyclerView(mRecyclerView);

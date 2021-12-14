@@ -24,7 +24,7 @@ public class AddTodoActivity extends Fragment {
 
     private ActivityAddTodoBinding addTodoBinding;
     private ActivitySetTimeBinding activitySetTimeBinding;
-//    private ActivityChooseLocationBinding chooseLocationBinding;
+    private ActivityChooseLocationBinding chooseLocationBinding;
     private ToDoViewModel viewModel;
 
     @Override
@@ -61,6 +61,13 @@ public class AddTodoActivity extends Fragment {
             @Override
             public void onClick(View view) {
                 showRemindMeDatePicker(view);
+            }
+        });
+
+        addTodoBinding.locationEditText.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                showLocationPicker(view);
             }
         });
 
@@ -142,7 +149,6 @@ public class AddTodoActivity extends Fragment {
 
     public void showRemindMeDatePicker(View v) {
         activitySetTimeBinding = ActivitySetTimeBinding.inflate(requireActivity().getLayoutInflater());
-        //final View dialogView = View.inflate(requireActivity(), R.layout.date_time_picker, null);
         final AlertDialog alertDialog = new AlertDialog.Builder(requireActivity()).create();
         LocalDateTime dateTime = viewModel.editToDo.getValue().getDeadline();
         activitySetTimeBinding.datePicker.updateDate(dateTime.getYear(),dateTime
@@ -176,7 +182,15 @@ public class AddTodoActivity extends Fragment {
         alertDialog.show();
     }
 
-//    public void showLocationPicker(View v) {
-//
-//    }
+    public void showLocationPicker(View v) {
+        chooseLocationBinding = ActivityChooseLocationBinding.inflate(requireActivity()
+                .getLayoutInflater());
+        final AlertDialog alertDialog = new AlertDialog.Builder(requireActivity()).create();
+        String latLong = viewModel.editToDo.getValue().createLatLong();
+
+
+
+        alertDialog.setView(chooseLocationBinding.getRoot());
+        alertDialog.show();
+    }
 }

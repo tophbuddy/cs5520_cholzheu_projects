@@ -1,6 +1,6 @@
 package edu.neu.khoury.madsea.chrisholzheu.data;
 
-import android.util.Log;
+
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;

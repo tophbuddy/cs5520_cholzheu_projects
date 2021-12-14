@@ -60,6 +60,8 @@ public class ToDoViewModel extends ViewModel {
             newToDo.setTodoId(repo.getToDoId());
             newToDo.setTodoOrder(editToDo.getValue().getTodoOrder());
             newToDo.setComplete(editToDo.getValue().isComplete());
+            newToDo.setLongitude(editToDo.getValue().getLongitude());
+            newToDo.setLatitude(editToDo.getValue().getLatitude());
             repo.addToDo(newToDo);
         }
     }
@@ -89,6 +91,14 @@ public class ToDoViewModel extends ViewModel {
 
     public LiveData<List<ToDo>> getToDoList() {
         return toDoList;
+    }
+
+    public void swapItems(int oldPos, int newPos) {
+        repo.swapItems(oldPos, newPos);
+    }
+
+    public void updateOrder() {
+        repo.updateListOrder();
     }
 
     public void createNotification(int toDoId) {
