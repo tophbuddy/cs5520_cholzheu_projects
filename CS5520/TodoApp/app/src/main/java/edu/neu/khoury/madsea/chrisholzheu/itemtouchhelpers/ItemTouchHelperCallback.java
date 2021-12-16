@@ -1,19 +1,26 @@
 package edu.neu.khoury.madsea.chrisholzheu.itemtouchhelpers;
 
 import android.graphics.Canvas;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import edu.neu.khoury.madsea.chrisholzheu.ToDoViewModel;
+import edu.neu.khoury.madsea.chrisholzheu.data.ToDoRepository;
+
 
 public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
+    private static final String ITEM_TOUCH_TAG = "ItemTouchHelperCallback";
     public static final float ALPHA = 1.0f;
     private final ItemTouchHelperAdapter mAdapter;
+    private ToDoViewModel mViewModel;
 
-    public ItemTouchHelperCallback(ItemTouchHelperAdapter adapter) {
+    public ItemTouchHelperCallback(ItemTouchHelperAdapter adapter, ToDoViewModel viewModel) {
         mAdapter = adapter;
+        mViewModel = viewModel;
     }
 
     @Override
@@ -23,22 +30,13 @@ public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     @Override
     public boolean isItemViewSwipeEnabled() {
-        return true;
+        return false;
     }
 
     @Override
     public int getMovementFlags(@NonNull RecyclerView recyclerView,
                                 @NonNull RecyclerView.ViewHolder viewHolder) {
-        if (recyclerView.getLayoutManager() instanceof RecyclerView.LayoutManager) {
-            final int dragFlag = ItemTouchHelper.UP | ItemTouchHelper.DOWN |
-                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
-            final int swipeFlag = 0;
-            return makeMovementFlags(dragFlag, swipeFlag);
-        } else {
-            final int dragFlag = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
-            final int swipeFlag = ItemTouchHelper.START | ItemTouchHelper.END;
-            return makeMovementFlags(dragFlag, swipeFlag);
-        }
+        return makeMovementFlags(ItemTouchHelper.UP | ItemTouchHelper.DOWN, 0);
     }
 
     @Override
@@ -48,14 +46,21 @@ public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
         if (viewHolder.getItemViewType() != target.getItemViewType()) {
             return false;
         }
+        long oldPos = viewHolder.getBindingAdapterPosition() + 1;
+        long newPos = target.getBindingAdapterPosition() + 1;
+        Log.d(ITEM_TOUCH_TAG, "ItemTouch old position: " + oldPos);
+        Log.d(ITEM_TOUCH_TAG, "ItemTouch new position: " + newPos);
         mAdapter.onItemMove(viewHolder.getBindingAdapterPosition(),
                 target.getBindingAdapterPosition());
+        if (oldPos != newPos) {
+            mViewModel.swapItems(oldPos, newPos);
+//            mViewModel.updateOrder();
+        }
         return true;
     }
 
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-        mAdapter.onItemDismiss(viewHolder.getBindingAdapterPosition());
     }
 
     @Override
@@ -80,16 +85,18 @@ public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
                 itemViewHolder.onItemSelected();
             }
         }
+        super.onSelectedChanged(viewHolder, actionState);
     }
 
     @Override
     public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         super.clearView(recyclerView, viewHolder);
         viewHolder.itemView.setAlpha(ALPHA);
-
+//        mViewModel.updateOrder();
         if (viewHolder instanceof ItemTouchHelperViewHolder) {
             ItemTouchHelperViewHolder itemViewHolder = (ItemTouchHelperViewHolder) viewHolder;
             itemViewHolder.onItemClear();
+            mViewModel.updateOrder();
         }
     }
 }

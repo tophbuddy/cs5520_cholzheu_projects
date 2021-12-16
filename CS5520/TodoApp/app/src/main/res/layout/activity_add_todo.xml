@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/todo_location_hint"
-                    android:text="test"
+                    android:text="Map"
                     android:inputType="none"
                     android:focusable="false"
                     android:cursorVisible="false"/>

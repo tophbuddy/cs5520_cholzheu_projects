@@ -47,10 +47,10 @@ public class ToDoViewModel extends ViewModel {
             }
         } else {
             if (editToDo.getValue().isReminder()) {
-                createNotification(repo.getToDoId());
+                createNotification(editToDo.getValue().getTodoId());
             }
             ToDo newToDo = new ToDo();
-            Log.d(VIEW_TAG, "Adding new todo with id: " + Long.toString((repo.getToDoId())));
+            Log.d(VIEW_TAG, "edit todo with id: " + Long.toString((editToDo.getValue().getTodoId())));
             newToDo.setTodoTitle(editToDo.getValue().getTodoTitle());
             newToDo.setTodoDetails(editToDo.getValue().getTodoDetails());
             newToDo.setTodoTags(editToDo.getValue().getTodoTags());
@@ -58,10 +58,12 @@ public class ToDoViewModel extends ViewModel {
             newToDo.setReminder(editToDo.getValue().isReminder());
             newToDo.setReminderDate(editToDo.getValue().getReminderDate());
             newToDo.setTodoId(repo.getToDoId());
-            newToDo.setTodoOrder(editToDo.getValue().getTodoOrder());
+            newToDo.setTodoOrder(repo.getToDoId());
             newToDo.setComplete(editToDo.getValue().isComplete());
             newToDo.setLongitude(editToDo.getValue().getLongitude());
             newToDo.setLatitude(editToDo.getValue().getLatitude());
+            Log.d(VIEW_TAG, "Adding new todo with id: " + Long.toString((newToDo.getTodoId())));
+            Log.d(VIEW_TAG, "Adding new todo with order number: " + Long.toString((newToDo.getTodoOrder())));
             repo.addToDo(newToDo);
         }
     }
@@ -93,16 +95,23 @@ public class ToDoViewModel extends ViewModel {
         return toDoList;
     }
 
-    public void swapItems(int oldPos, int newPos) {
+    public void swapItems(long oldPos, long newPos) {
+        Log.d(VIEW_TAG, "ViewModel old position: " + oldPos);
+        Log.d(VIEW_TAG, "ViewModel new position: " + newPos);
         repo.swapItems(oldPos, newPos);
     }
 
     public void updateOrder() {
+        Log.d(VIEW_TAG, "update order called");
         repo.updateListOrder();
     }
 
-    public void createNotification(int toDoId) {
-        String outputDataTag = "outputDataTag_" + Integer.toString(toDoId);
+    public LiveData<ToDo> getTodo(long id) {
+        return repo.getTodoById(id);
+    }
+
+    public void createNotification(long toDoId) {
+        String outputDataTag = "outputDataTag_" + Long.toString(toDoId);
         LocalDateTime reminderDate = editToDo.getValue().getReminderDate();
         Long notificationDelayTime = reminderDate
                 .toEpochSecond(ZoneOffset.UTC) - LocalDateTime.now()
@@ -117,9 +126,9 @@ public class ToDoViewModel extends ViewModel {
         workManager.enqueue(workRequest);
     }
 
-    public Data setReminderInfo(int toDoId) {
+    public Data setReminderInfo(long toDoId) {
         Data.Builder builder = new Data.Builder();
-        builder.putInt(Constants.TODO_ID, toDoId);
+        builder.putLong(Constants.TODO_ID, toDoId);
         builder.putString(Constants.TODO_TITLE, editToDo.getValue().getTodoTitle());
         builder.putString(Constants.TODO_DETAILS, editToDo.getValue().getTodoDetails());
         return builder.build();

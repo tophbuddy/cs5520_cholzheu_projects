@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ public class AddTodoActivity extends Fragment {
     private ActivitySetTimeBinding activitySetTimeBinding;
     private ActivityChooseLocationBinding chooseLocationBinding;
     private ToDoViewModel viewModel;
+    Intent intent;
 
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -67,7 +69,9 @@ public class AddTodoActivity extends Fragment {
         addTodoBinding.locationEditText.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                showLocationPicker(view);
+                NavHostFragment.findNavController(AddTodoActivity.this)
+                        .navigate(R.id.action_SecondFragment_to_LocationPicker);
+//                showLocationPicker(view);
             }
         });
 

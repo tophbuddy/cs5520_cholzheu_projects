@@ -18,10 +18,10 @@ import edu.neu.khoury.madsea.chrisholzheu.ToDoItemContentConverter;
 public class ToDo {
 
 //    @PrimaryKey(autoGenerate = true)
+//    @NonNull
     @PrimaryKey
-    @NonNull
     @ColumnInfo(name="todo_id")
-    private int todoId;
+    private long todoId;
 
     @NonNull
     @ColumnInfo(name="title")
@@ -65,7 +65,7 @@ public class ToDo {
 
     @NonNull
     @ColumnInfo(name="position_order")
-    private int todoOrder;
+    private long todoOrder;
 
 
     public ToDo(ToDo toDo) {
@@ -91,25 +91,25 @@ public class ToDo {
         todoTags = new HashSet<String>();
         reminder = false;
         complete = false;
-        todoOrder = 0;
         latitude = "1";
         longitude = "1";
     }
 
-    public int getTodoId() {
+    public long getTodoId() {
         return todoId;
     }
 
-    public void setTodoId(int todoId) {
+    public void setTodoId(long todoId) {
         this.todoId = todoId;
     }
 
-    public int getTodoOrder() {
+    public long getTodoOrder() {
         return todoOrder;
     }
 
-    public void setTodoOrder(int todoOrder) {
+    public void setTodoOrder(long todoOrder) {
         this.todoOrder = todoOrder;
+//        this.todoOrder = getTodoId();
     }
 
     public String getTodoTitle() {

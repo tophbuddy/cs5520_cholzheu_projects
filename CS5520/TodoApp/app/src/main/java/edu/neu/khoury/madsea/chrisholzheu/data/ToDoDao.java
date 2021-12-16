@@ -40,9 +40,8 @@ public interface ToDoDao {
     @Query("UPDATE todo_table SET position_order = " +
             "( SELECT SUM(position_order) FROM todo_table WHERE todo_id IN (:oldPos, :newPos)) - " +
             "position_order WHERE todo_id IN (:oldPos, :newPos)")
-    int swapPositions(int oldPos, int newPos);
+    int swapPositions(long oldPos, long newPos);
 
-    // UPDATE todo_table set todoOrder = 2 when id = 3
     @Query("SELECT * FROM todo_table ORDER BY position_order ASC")
     LiveData<List<ToDo>> sortByOrder();
 
@@ -50,16 +49,8 @@ public interface ToDoDao {
     LiveData<Integer> getLargestOrder();
 
     @Query("SELECT * FROM todo_table LIMIT :n")
-    LiveData<List<ToDo>> getTodosLimited(int n);
-}
+    LiveData<List<ToDo>> getTodosLimited(long n);
 
-//FromNumber.setPosition(ToNumber)
-//Figure moving up or down by fromNumber-toNumber, if negative -> moving down
-//        If moving down -> decrement index for all items in between
-//        else -> increment
-//for (int i = lowerNumber + 1; i <= higherNumber; i++) {
-//    if up
-//        num[i].setPosition(num[i] + 1) -> this is to change ToDoOrder in table
-//    if down
-//        num[i].setPosition(num[i] - 1)
-//}
+    @Query("SELECT * FROM todo_table WHERE todo_table.todo_id == :todoId")
+    LiveData<ToDo> getTodo(long todoId);
+}

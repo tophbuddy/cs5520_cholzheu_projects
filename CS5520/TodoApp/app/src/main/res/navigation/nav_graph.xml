@@ -23,25 +23,20 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
         <action
+            android:id="@+id/action_SecondFragment_to_LocationPicker"
+            app:destination="@id/LocationPicker" />
+        <action
             android:id="@+id/action_SecondFragment_pop"
             app:destination="@id/FirstFragment"
             app:popUpTo="@id/SecondFragment"
             app:popUpToInclusive="true" />
     </fragment>
 
-    <fragment
-        android:id="@+id/ThirdFragment"
+    <activity
+        android:id="@+id/LocationPicker"
         android:name="edu.neu.khoury.madsea.chrisholzheu.LocationPickerActivity"
-        android:label="@string/third_fragment_label"
+        android:label="@string/location_picker_label"
         tools:layout="@layout/activity_choose_location">
-        <action
-            android:id="@+id/action_ThirdFragment_to_SecondFragment"
-            app:destination="@+id/SecondFragment" />
-        <action
-            android:id="@+id/action_ThirdFragment_pop"
-            app:destination="@+id/SecondFragment"
-            app:popUpTo="@id/ThirdFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+    </activity>
 
 </navigation>

@@ -70,7 +70,7 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
                 list -> {
                     mAdapter.submitList(list);
                 });
-        ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(mAdapter);
+        ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(mAdapter, viewModel);
         mItemTouchHelper = new ItemTouchHelper(callback);
         mItemTouchHelper.attachToRecyclerView(mRecyclerView);
         return listBinding.getRoot();
@@ -87,15 +87,6 @@ public class ToDoListItem extends Fragment implements ToDoRecyclerViewAdapter.Ex
             }
         });
     }
-
-//    private void updateUi(LiveData<List<ToDo>> liveData) {
-//        liveData.observe(getViewLifecycleOwner(), myTodos -> {
-//            if (myTodos != null) {
-//                mAdapter.setTodoList(myTodos);
-//            }
-//
-//        });
-//    }
 
     @Override
     public void onDestroyView() {

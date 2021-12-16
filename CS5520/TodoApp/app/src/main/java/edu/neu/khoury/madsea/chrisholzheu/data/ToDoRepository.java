@@ -1,5 +1,7 @@
 package edu.neu.khoury.madsea.chrisholzheu.data;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ public class ToDoRepository {
     private final ToDoRoomDatabase toDoDatabase;
     private final LiveData<Integer> toDoId;
     private static final int DEFAULT_ID = 1;
+    private static final String REPO_TAG = "ToDoRepository";
 
     private ToDoRepository(final ToDoRoomDatabase database) {
         toDoDatabase = database;
@@ -45,6 +48,12 @@ public class ToDoRepository {
         });
     }
 
+    public void updateAll(List<ToDo> updater) {
+        ToDoRoomDatabase.databaseWriteExecutor.execute(() -> {
+            toDoDao.updateList(updater);
+        });
+    }
+
     public void delete(ToDo toDo) {
         ToDoRoomDatabase.databaseWriteExecutor.execute(() -> {
             toDoDao.delete(toDo);
@@ -53,21 +62,26 @@ public class ToDoRepository {
 
     public void updateListOrder() {
         ToDoRoomDatabase.databaseWriteExecutor.execute(() -> {
-            toDoDao.sortByOrder();
+            allToDos = toDoDao.sortByOrder();
         });
     }
 
-    public void swapItems(int oldPos, int newPos) {
+    public void swapItems(long oldPos, long newPos) {
+        Log.d(REPO_TAG, "Repo old position: " + oldPos);
+        Log.d(REPO_TAG, "Repo new position: " + newPos);
         ToDoRoomDatabase.databaseWriteExecutor.execute(() -> {
             toDoDao.swapPositions(oldPos, newPos);
         });
     }
 
-    public int getToDoId() {
+    public LiveData<ToDo> getTodoById(long todoId) {
+        return toDoDao.getTodo(todoId);
+    }
+
+    public long getToDoId() {
         if (toDoId.getValue() == null)
             return DEFAULT_ID;
         else
             return toDoId.getValue() + DEFAULT_ID;
     }
-
 }
