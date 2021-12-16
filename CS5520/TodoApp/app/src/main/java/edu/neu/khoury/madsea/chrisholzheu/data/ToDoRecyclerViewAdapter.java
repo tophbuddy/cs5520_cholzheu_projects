@@ -82,7 +82,7 @@ public class ToDoRecyclerViewAdapter extends ListAdapter<ToDo, ToDoViewHolder>
 //        this.notifyItemMoved(fromPosition, toPosition);
         this.notifyItemChanged(fromPosition);
         this.notifyItemChanged(toPosition);
-        return false;
+        return true;
     }
 
     @Override

@@ -96,7 +96,7 @@ public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
         if (viewHolder instanceof ItemTouchHelperViewHolder) {
             ItemTouchHelperViewHolder itemViewHolder = (ItemTouchHelperViewHolder) viewHolder;
             itemViewHolder.onItemClear();
-            mViewModel.updateOrder();
+//            mViewModel.updateOrder();
         }
     }
 }

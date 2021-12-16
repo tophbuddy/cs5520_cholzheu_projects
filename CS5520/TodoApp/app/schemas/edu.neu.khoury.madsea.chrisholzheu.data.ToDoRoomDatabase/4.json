@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 4,
-    "identityHash": "a78d87d21e6cdd6421535db628e1ab63",
+    "identityHash": "1205665626505170e1425bcb91807efd",
     "entities": [
       {
         "tableName": "todo_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`todo_id` INTEGER NOT NULL, `title` TEXT NOT NULL, `details` TEXT NOT NULL, `tags` TEXT NOT NULL, `deadline` INTEGER NOT NULL, `reminder_date` INTEGER NOT NULL, `reminder` INTEGER NOT NULL, `latitude` TEXT NOT NULL, `longitude` TEXT NOT NULL, `complete` INTEGER NOT NULL, `position_order` INTEGER NOT NULL, PRIMARY KEY(`todo_id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`todo_id` INTEGER NOT NULL, `title` TEXT NOT NULL, `details` TEXT NOT NULL, `tags` TEXT NOT NULL, `deadline` TEXT NOT NULL, `reminder_date` TEXT NOT NULL, `reminder` INTEGER NOT NULL, `latitude` TEXT NOT NULL, `longitude` TEXT NOT NULL, `complete` INTEGER NOT NULL, `position_order` INTEGER NOT NULL, PRIMARY KEY(`todo_id`))",
         "fields": [
           {
             "fieldPath": "todoId",
@@ -35,13 +35,13 @@
           {
             "fieldPath": "deadline",
             "columnName": "deadline",
-            "affinity": "INTEGER",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
             "fieldPath": "reminderDate",
             "columnName": "reminder_date",
-            "affinity": "INTEGER",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
@@ -88,7 +88,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a78d87d21e6cdd6421535db628e1ab63')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1205665626505170e1425bcb91807efd')"
     ]
   }
 }

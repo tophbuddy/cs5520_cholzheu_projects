@@ -185,16 +185,4 @@ public class AddTodoActivity extends Fragment {
         alertDialog.setView(activitySetTimeBinding.getRoot());
         alertDialog.show();
     }
-
-    public void showLocationPicker(View v) {
-        chooseLocationBinding = ActivityChooseLocationBinding.inflate(requireActivity()
-                .getLayoutInflater());
-        final AlertDialog alertDialog = new AlertDialog.Builder(requireActivity()).create();
-        String latLong = viewModel.editToDo.getValue().createLatLong();
-
-
-
-        alertDialog.setView(chooseLocationBinding.getRoot());
-        alertDialog.show();
-    }
 }
